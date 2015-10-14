@@ -1,0 +1,12 @@
+*.swp
+vendor
+phpunit.xml
+Resources/logs/*
+Resources/doc/*
+/build/
+*.phar
+_layout/*
+_site/*
+doc/*
+Resources/Documentation/*.php
+app.json
