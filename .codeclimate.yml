@@ -1,5 +1,6 @@
-languages:
-  PHP: true
+engines: {}
+ratings:
+  paths: []
 exclude_paths:
-  - "tests/*"
-  - "Resources/*"
+  - tests/*
+  - Resources/*
