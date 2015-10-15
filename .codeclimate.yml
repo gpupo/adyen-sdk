@@ -1,6 +1,11 @@
-engines: {}
+engines:
+  phpcodesniffer:
+    enabled: true
+  phpmd:
+    enabled: true
 ratings:
-  paths: []
+  paths:
+      - "**.php"
 exclude_paths:
   - tests/*
   - Resources/*
