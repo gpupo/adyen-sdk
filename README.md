@@ -17,7 +17,37 @@ SDK Não Oficial para integração a partir de aplicações PHP com as APIs da A
 
 ## Instalação
 
+Adicione o pacote [adyen-sdk](https://packagist.org/packages/gpupo/adyen-sdk) ao seu projeto utilizando [composer](http://getcomposer.org):
 
+    composer require gpupo/adyen-sdk
+
+---
+
+# Uso
+
+## Setup Inicial
+
+```PHP
+
+//...
+use Gpupo\AdyenSdk\Factory;
+
+$adyenSdk = Factory::getInstance()->setup([
+    'client_user'       => 'foo',
+    'client_password'   => 'bar',
+    'version'           => 'test',
+]);
+
+```
+
+Parâmetro | Descrição | Valores possíveis
+----------|-----------|------------------
+``client_user``|Chave da loja| string
+``client_password``|Token de autorização da aplicação| string
+``version``|Identificação do Ambiente| test, live (produção)
+``registerPath``|Quando informado, registra no diretório informado, os dados de cada requisição executada
+
+---
 
 ## Propriedades dos objetos
 
