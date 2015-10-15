@@ -17,6 +17,22 @@ namespace Gpupo\AdyenSdk\Order;
 use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 
+/**
+ * @method string getAmount()    Acesso a amount
+ * @method setAmount(string $amount)    Define amount
+ * @method string getCurrency()    Acesso a currency
+ * @method setCurrency(string $currency)    Define currency
+ * @method integer getValue()    Acesso a value
+ * @method setValue(integer $value)    Define value
+ * @method string getReference()    Acesso a reference
+ * @method setReference(string $reference)    Define reference
+ * @method string getShopperIP()    Acesso a shopperIP
+ * @method setShopperIP(string $shopperIP)    Define shopperIP
+ * @method string getShopperEmail()    Acesso a shopperEmail
+ * @method setShopperEmail(string $shopperEmail)    Define shopperEmail
+ * @method string getShopperReference()    Acesso a shopperReference
+ * @method setShopperReference(string $shopperReference)    Define shopperReference
+ */
 class Order extends EntityAbstract implements EntityInterface
 {
     public function getSchema()

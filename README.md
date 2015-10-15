@@ -105,3 +105,20 @@ phpunit --testdox | grep -vi php |  sed "s/.*\[*]/-/" | sed 's/.*Gpupo.*/&\'$'\n
 
 - Centraliza criacao de objetos
 
+### Order\Order
+
+- Possui método ``getAmount()`` para acessar Amount
+- Possui método ``setAmount()`` que define Amount
+- Possui método ``getCurrency()`` para acessar Currency
+- Possui método ``setCurrency()`` que define Currency
+- Possui método ``getValue()`` para acessar Value
+- Possui método ``setValue()`` que define Value
+- Possui método ``getReference()`` para acessar Reference
+- Possui método ``setReference()`` que define Reference
+- Possui método ``getShopperIP()`` para acessar ShopperIP
+- Possui método ``setShopperIP()`` que define ShopperIP
+- Possui método ``getShopperEmail()`` para acessar ShopperEmail
+- Possui método ``setShopperEmail()`` que define ShopperEmail
+- Possui método ``getShopperReference()`` para acessar ShopperReference
+- Possui método ``setShopperReference()`` que define ShopperReference
+- Entidade é uma Coleção
