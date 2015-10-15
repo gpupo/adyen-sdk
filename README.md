@@ -28,7 +28,6 @@ Adicione o pacote [adyen-sdk](https://packagist.org/packages/gpupo/adyen-sdk) ao
 ## Setup Inicial
 
 ```PHP
-
 //...
 use Gpupo\AdyenSdk\Factory;
 
@@ -36,16 +35,42 @@ $adyenSdk = Factory::getInstance()->setup([
     'client_user'       => 'foo',
     'client_password'   => 'bar',
     'version'           => 'test',
+    'public_Key'        => 'Resources/public_key.txt',
 ]);
 
 ```
 
 Parâmetro | Descrição | Valores possíveis
 ----------|-----------|------------------
-``client_user``|Chave da loja| string
-``client_password``|Token de autorização da aplicação| string
+``client_user``|Usuário webservice| string
+``client_password``|Senha do usuário webservice| string
+``public_Key``|Path para a chave pública utilizada no CSE| string
 ``version``|Identificação do Ambiente| test, live (produção)
 ``registerPath``|Quando informado, registra no diretório informado, os dados de cada requisição executada
+
+#### Registro (log)
+
+``` PHP
+//...
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+//..
+$logger = new Logger('foo');
+$logger->pushHandler(new StreamHandler('Resources/logs/main.log', Logger::DEBUG));
+$adyenSdk->setLogger($logger);
+
+```
+## Transações
+
+Nos exemplos abaixo considere que ``$data`` possui [esta estrutura](https://github.com/gpupo/adyen-sdk/blob/master/Resources/fixtures/order.input.json);
+
+#### Criação de uma nova transação
+
+``` PHP
+$order = $adyenSdk->createOrder($data);
+$transaction = $adyenSdk->factoryManager('payment')->authorise($order);
+
+```
 
 ---
 
