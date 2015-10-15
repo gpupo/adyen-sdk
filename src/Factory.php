@@ -32,6 +32,9 @@ class Factory extends FactoryAbstract
     protected function getSchema($namespace = null)
     {
         return [
+            'order' => [
+                'class'     => $namespace . 'Order\Order',
+            ],
             'authorise' => [
                 'class'     => $namespace . 'Payment\Authorise',
                 'manager'   => $namespace . 'Payment\Manager',
