@@ -10,3 +10,4 @@ _site/*
 doc/*
 Resources/Documentation/*.php
 app.json
+Resources/public_key.txt
