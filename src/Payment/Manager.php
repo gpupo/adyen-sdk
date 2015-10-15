@@ -26,4 +26,12 @@ class Manager extends ManagerAbstract
     protected $maps = [
         'authorise'    => ['POST', '/authorise'],
     ];
+
+    public function authorise(AbstractRequest $request)
+    {
+        $status = $order->getStatus();
+
+        return $this->execute($this->factoryMap('authorise'), $request->toJson());
+    }
+
 }
