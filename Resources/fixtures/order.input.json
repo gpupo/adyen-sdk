@@ -1,0 +1,9 @@
+{
+    "amount":"R$34.91",
+    "currency":"BRL",
+    "value": 3491,
+    "reference": "payment-918293",
+    "shopperIP": "200.187.99.11",
+    "shopperEmail": "foo@example.com",
+    "shopperReference": "119882811"
+}
