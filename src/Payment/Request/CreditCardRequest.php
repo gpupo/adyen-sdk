@@ -12,18 +12,13 @@
  * <http://www.g1mr.com/adyen-sdk/>.
  */
 
-namespace Gpupo\AdyenSdk\Transaction;
+namespace Gpupo\AdyenSdk\Payment\Request;
 
-use Gpupo\AdyenSdk\ManagerAbstract;
-
-/**
- * Gerenciamento de Transações Adyen.
- */
-class Manager extends ManagerAbstract
+class CreditCardRequest extends AbstractRequest
 {
-    protected $entity = 'Payment';
-
-    protected $maps = [
-        'authorise'    => ['POST', '/authorise'],
-    ];
+    public function getSchema()
+    {
+        return array_merge(parent::getSchema(),[
+        ]);
+    }
 }
