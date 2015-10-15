@@ -1,0 +1,11 @@
+{
+  "amount": {
+    "value": 1499,
+    "currency": "GBP"
+  },
+  "reference": "payment-613615",
+  "merchantAccount": "NewCoCOM",
+  "additionalData": {
+    "card.encrypted.json": ".. encrypted data .."
+  }
+}
