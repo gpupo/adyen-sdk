@@ -1,0 +1,28 @@
+{
+    "amount" : {
+        "value" : 1000,
+        "currency" : "BRL"
+    },
+
+    "billingAddress" : {
+        "city" : "São Paulo",
+        "country" : "BR",
+        "houseNumberOrName" : "999",
+        "postalCode" : "04787910",
+        "stateOrProvince" : "SP",
+        "street" : "Roque Petroni Jr"
+    },
+
+    "deliveryDate" : "2013-10-29T23:00:00.000Z",
+    "reference" : "Teste Boleto",
+    "merchantAccount" : "TestMerchant",
+    "selectedBrand" : "boletobancario_bradesco",
+
+    "shopperName": {
+        "firstName" : "José",
+        "lastName" : "Silva"
+    },
+
+    "shopperStatement" : "Aceitar o pagamento até 15 dias após o vencimento.&#xA;Não cobrar juros. Não aceitar o pagamento com cheque",
+    "socialSecurityNumber" : "56861752509"
+}

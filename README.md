@@ -34,8 +34,7 @@ use Gpupo\AdyenSdk\Factory;
 $adyenSdk = Factory::getInstance()->setup([
     'client_user'       => 'foo',
     'client_password'   => 'bar',
-    'version'           => 'test',
-    'public_Key'        => 'Resources/public_key.txt',
+    'version'           => 'test'
 ]);
 
 ```
@@ -45,7 +44,6 @@ Parâmetro | Descrição | Valores possíveis
 ``client_user``|Usuário webservice| string
 ``client_password``|Senha do usuário webservice| string
 ``merchant_account``|Identificação da conta na Adyen| string
-``public_Key``|Path para a chave pública utilizada no CSE| string
 ``version``|Identificação do Ambiente| test, live (produção)
 ``registerPath``|Quando informado, registra no diretório informado, os dados de cada requisição executada
 
