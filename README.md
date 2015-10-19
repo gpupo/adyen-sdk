@@ -66,7 +66,6 @@ Nos exemplos abaixo considere que ``$data`` possui [esta estrutura](https://gith
 
 Parâmetro | Descrição | Valores possíveis
 ----------|-----------|------------------
-``amount``|Informacão do valor da transação| string (value,currency)
 ``currency``|ISO currency code| string (BRL para R$)
 ``value``|Valor em padrão ISO 4217 (**1047** para representar R$10,47)|	integer
 ``reference``|Identificador único por transação (tid)| string max.80 caracteres
@@ -74,15 +73,33 @@ Parâmetro | Descrição | Valores possíveis
 ``shopperEmail``|Endereço email do comprador|string
 ``shopperReference``|Id do cadastro do comprador|string
 
+#### Criação de uma nova transação com cartão de crédito
 
-#### Criação de uma nova transação
 
 ``` PHP
 //...
 $order = $adyenSdk->createOrder($data);
-$transaction = $adyenSdk->factoryManager('payment')->authorise($order);
+$request = $adyenSdk->createRequest($order);
+$request->setType('credit-card');
+$request->setEncryptedData($hash);
+
+$manager = $adyenSdk->factoryManager('request');
+$response = $manager->submit($order);
 
 ```
+
+#### Criação de uma nova transação com boleto bancário
+
+
+``` PHP
+//...
+$request->setType('boleto');
+$manager = $adyenSdk->factoryManager('request');
+$response = $manager->submit($order); //acesso à url do boleto e outras informações
+
+```
+
+
 
 ---
 
