@@ -84,7 +84,7 @@ $request->setType('credit-card');
 $request->setEncryptedData($hash);
 
 $manager = $adyenSdk->factoryManager('request');
-$response = $manager->submit($order);
+$response = $manager->submit($request);
 
 ```
 
@@ -95,7 +95,7 @@ $response = $manager->submit($order);
 //...
 $request->setType('boleto');
 $manager = $adyenSdk->factoryManager('request');
-$response = $manager->submit($order); //acesso à url do boleto e outras informações
+$response = $manager->submit($request); //acesso à url do boleto e outras informações
 
 ```
 
