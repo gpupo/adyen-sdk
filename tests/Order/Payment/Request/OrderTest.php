@@ -30,11 +30,11 @@ class OrderTest extends EntityTestCaseAbstract
     public function dataProviderObject()
     {
         $expected = [
-            'amount'           => 'object',
-            'reference'        => 'string',
-            'shopperIP'        => 'string',
-            'shopperEmail'     => 'string',
-            'shopperReference' => 'string',
+            'id'                => 'string',
+            'shopper'           => 'object',
+            'amount'            => 'object',
+            'billingAddress'    => 'object',
+            'deliveryDate'      => 'string',
         ];
 
         return $this->dataProviderEntitySchema(self::QUALIFIED, $expected);

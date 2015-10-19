@@ -1,0 +1,23 @@
+{
+    "id": "",
+    "shopper": {
+        "firstName": "",
+        "lastName": "",
+        "ip": "",
+        "email": "",
+        "socialSecurityNumber": 0
+    },
+    "amount": {
+        "currency": "",
+        "value": 0
+    },
+    "billingAddress": {
+        "city": "",
+        "country": "",
+        "houseNumberOrName": "",
+        "postalCode": "",
+        "stateOrProvince": "",
+        "street": ""
+    },
+    "deliveryDate": ""
+}

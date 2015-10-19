@@ -61,20 +61,9 @@ $adyenSdk->setLogger($logger);
 ```
 ## Transações
 
-Nos exemplos abaixo considere que ``$data`` possui [esta estrutura](https://github.com/gpupo/adyen-sdk/blob/master/Resources/fixtures/order.input.json) e para a formação destes valores considere a seguinte documentação:
-
-
-Parâmetro | Descrição | Valores possíveis
-----------|-----------|------------------
-``currency``|ISO currency code| string (BRL para R$)
-``value``|Valor em padrão ISO 4217 (**1047** para representar R$10,47)|	integer
-``reference``|Identificador único por transação (tid)| string max.80 caracteres
-``shopperIP``|Endereço IP do comprador|string
-``shopperEmail``|Endereço email do comprador|string
-``shopperReference``|Id do cadastro do comprador|string
+Nos exemplos abaixo considere que ``$data`` possui [esta estrutura](https://github.com/gpupo/adyen-sdk/blob/master/Resources/fixtures/fixtures/payment/request/order.json)
 
 #### Criação de uma nova transação com cartão de crédito
-
 
 ``` PHP
 //...
