@@ -12,13 +12,18 @@
  * <http://www.g1mr.com/adyen-sdk/>.
  */
 
-namespace Gpupo\AdyenSdk\Payment\Request;
+namespace Gpupo\AdyenSdk\Payment\Request\Order;
 
-class CreditCardRequest extends AbstractRequest
+use Gpupo\CommonSdk\Entity\EntityAbstract;
+use Gpupo\CommonSdk\Entity\EntityInterface;
+
+class Amount extends EntityAbstract implements EntityInterface
 {
     public function getSchema()
     {
-        return array_merge(parent::getSchema(),[
-        ]);
+        return [
+            'currency'          => 'string',
+            'value'             => 'integer',
+        ];
     }
 }

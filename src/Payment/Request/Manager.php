@@ -12,7 +12,7 @@
  * <http://www.g1mr.com/adyen-sdk/>.
  */
 
-namespace Gpupo\AdyenSdk\Transaction;
+namespace Gpupo\AdyenSdk\Payment\Request;
 
 use Gpupo\AdyenSdk\ManagerAbstract;
 

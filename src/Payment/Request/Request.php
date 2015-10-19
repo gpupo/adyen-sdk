@@ -17,13 +17,14 @@ namespace Gpupo\AdyenSdk\Payment\Request;
 use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 
-class Amount extends EntityAbstract implements EntityInterface
+class Request extends EntityAbstract implements EntityInterface
 {
     public function getSchema()
     {
         return [
-            'value'     =>  'integer',
-            'currency'  =>  'string',
+            "order"         => "object",
+            "type"          => "string",
+            'encryptedData' => 'string',
         ];
     }
 }

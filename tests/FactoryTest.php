@@ -29,7 +29,7 @@ class FactoryTest extends FactoryTestAbstract
     public function dataProviderObjetos()
     {
         return [
-            [$this->namespace . 'Payment\Authorise', 'authorise', null],
+            [$this->namespace . 'Payment\Request\Order\Order', 'order', null],
         ];
     }
 }
