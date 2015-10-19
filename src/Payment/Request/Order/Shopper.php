@@ -12,16 +12,21 @@
  * <http://www.g1mr.com/adyen-sdk/>.
  */
 
-namespace Gpupo\AdyenSdk\Order;
+namespace Gpupo\AdyenSdk\Payment\Request\Order;
 
 use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 
-class AdditionalData extends EntityAbstract implements EntityInterface
+class Shopper extends EntityAbstract implements EntityInterface
 {
     public function getSchema()
     {
         return [
+            'firstName'             => 'string',
+            'lastName'              => 'string',
+            'ip'                    => 'string',
+            'email'                 => 'string',
+            'socialSecurityNumber'  => 'integer',
         ];
     }
 }
