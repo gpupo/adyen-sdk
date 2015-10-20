@@ -27,6 +27,9 @@ class Application extends AbstractApplication
             'key'   => 'client_password',
         ],
         [
+            'key'   => 'merchant_account',
+        ],
+        [
             'key'       => 'env',
             'options'   => ['test', 'live'],
             'default'   => 'test',
@@ -41,7 +44,8 @@ class Application extends AbstractApplication
     public function factorySdk(array $options)
     {
         $options['version'] = $options['env'];
+        $instance = Factory::getInstance();
 
-        return  Factory::getInstance()->setup($options, $this->factoryLogger());
+        return  $instance->setup($options, $this->factoryLogger());
     }
 }

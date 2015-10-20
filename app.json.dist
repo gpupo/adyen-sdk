@@ -1,0 +1,7 @@
+{
+    "client_user": "foo",
+    "client_password": "bar",
+    "merchant_account": "zeta",
+    "env": "test",
+    "registerPath": false
+}
