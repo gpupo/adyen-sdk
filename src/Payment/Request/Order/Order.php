@@ -24,12 +24,17 @@ class Order extends EntityAbstract implements EntityInterface
         return [
             'id'                => 'string',
             'shopper'           => 'object',
-            'amount'            => 'object',
+            'amount'            => 'number',
             'billingAddress'    => 'object',
             'shippingAddress'   => 'object',
             'installments'      => 'integer',
             'deliveryDate'      => 'string',
             'createdAt'         => 'string',
         ];
+    }
+
+    public function getAmount()
+    {
+        return number_format($this->get('amount'), 2);
     }
 }

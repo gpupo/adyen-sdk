@@ -1,16 +1,12 @@
 {
     "order": {
-        "id": "",
+        "id": "123456",
         "shopper": {
-            "firstName": "",
-            "lastName": "",
-            "ip": "",
-            "email": "",
-            "socialSecurityNumber": 0
-        },
-        "amount": {
-            "currency": "",
-            "value": 0
+            "firstName": "Hello",
+            "lastName": "Kay",
+            "ip": "192.168.88.1",
+            "email": "kay@example.com",
+            "socialSecurityNumber": 38708608474
         },
         "billingAddress": {
             "city": "",
@@ -28,12 +24,11 @@
             "stateOrProvince": "",
             "street": ""
         },
+        "amount": 89.1,
         "installments": 0,
-        "deliveryDate": "",
-        "createdAt": ""
+        "deliveryDate": "2015-10-20 00:00:00",
+        "createdAt": "2015-10-20 15:10:31"
     },
-    "type": "",
-    "encryptedData": "",
-    "reference": "",
-    "merchantAccount": ""
+    "type": "cc",
+    "encryptedData": "2b00a1f094d97c14caa91fe31b2baae72b00a1f094d97c14caa91fe31b2baae7"
 }

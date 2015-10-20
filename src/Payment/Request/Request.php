@@ -14,8 +14,6 @@
 
 namespace Gpupo\AdyenSdk\Payment\Request;
 
-use Gpupo\AdyenSdk\Payment\Request\Decorator\BoletoDecorator;
-use Gpupo\AdyenSdk\Payment\Request\Decorator\CreditCardDecorator;
 use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 
@@ -27,8 +25,12 @@ class Request extends EntityAbstract implements EntityInterface
             'order'             => 'object',
             'type'              => 'string',
             'encryptedData'     => 'string',
-            'merchantAccount'   => 'string',
         ];
+    }
+
+    public function getMerchantAccount()
+    {
+        return 'foo';
     }
 
     protected function resolveDecorator()
@@ -45,7 +47,12 @@ class Request extends EntityAbstract implements EntityInterface
             throw new \InvalidArgumentException('Request type [' . $type . ']not exist!');
         }
 
-        return $dict[$type];
+        $className = '\Gpupo\AdyenSdk\Payment\Request\Decorator\\'.$dict[$type];
+        if (!class_exists($className)) {
+            throw new \InvalidArgumentException('Request type [' . $type . '] not supported!');
+        }
+
+        return $className;
     }
 
     public function toJson($route = null)

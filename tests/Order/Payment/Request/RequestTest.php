@@ -15,6 +15,7 @@
 namespace Gpupo\Tests\AdyenSdk\Payment\Request;
 
 use Gpupo\Tests\AdyenSdk\EntityTestCaseAbstract;
+use Gpupo\CommonSdk\Entity\EntityInterface;
 
 class RequestTest extends EntityTestCaseAbstract
 {
@@ -32,12 +33,76 @@ class RequestTest extends EntityTestCaseAbstract
             'order'             => 'object',
             'type'              => 'string',
             'encryptedData'     => 'string',
-            'reference'         => 'string',
-            'merchantAccount'   => 'string',
         ];
 
         return $this->dataProviderEntitySchema(self::QUALIFIED, $expected);
     }
 
+    protected function factoryRequest()
+    {
+        $data = $this->getResourceJson('fixtures/payment/request/request.json');
+
+        return $this->getFactory()->createRequest($data);
+    }
     
+    /**
+     * @testdox Possui método ``getOrder()`` para acessar Order
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function getterOrder(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaGetter('order', 'object', $object, $expected);
+    }
+
+    /**
+     * @testdox Possui método ``setOrder()`` que define Order
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function setterOrder(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaSetter('order', 'object', $object);
+    }
+
+    /**
+     * @testdox Possui método ``getType()`` para acessar Type
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function getterType(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaGetter('type', 'string', $object, $expected);
+    }
+
+    /**
+     * @testdox Possui método ``setType()`` que define Type
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function setterType(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaSetter('type', 'string', $object);
+    }
+
+    /**
+     * @testdox Possui método ``getEncryptedData()`` para acessar EncryptedData
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function getterEncryptedData(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaGetter('encryptedData', 'string', $object, $expected);
+    }
+
+    /**
+     * @testdox Possui método ``setEncryptedData()`` que define EncryptedData
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function setterEncryptedData(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaSetter('encryptedData', 'string', $object);
+    }
+
 }
