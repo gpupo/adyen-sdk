@@ -33,5 +33,4 @@ class Manager extends ManagerAbstract
 
         return $this->execute($this->factoryMap('authorise'), $request->toJson());
     }
-
 }
