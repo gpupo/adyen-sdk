@@ -16,4 +16,13 @@ namespace Gpupo\AdyenSdk\Payment\Request\Decorator;
 
 class CreditCardDecorator extends AbstractDecorator
 {
+    protected function getCustomFields()
+    {
+        return [
+            'additionalData' => [
+                'card.encrypted.json' => $this->getRequest()->getEncryptedData(),
+            ],
+        ];
+    }
+
 }

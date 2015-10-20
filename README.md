@@ -61,17 +61,14 @@ $adyenSdk->setLogger($logger);
 ```
 ## Transações
 
-Nos exemplos abaixo considere que ``$data`` possui [esta estrutura](https://github.com/gpupo/adyen-sdk/blob/master/Resources/fixtures/payment/request/order.json)
+Nos exemplos abaixo considere que ``$data`` possui [esta estrutura](https://github.com/gpupo/adyen-sdk/blob/master/Resources/fixtures/payment/request/request.json)
 
 #### Criação de uma nova transação com cartão de crédito
 
 ``` PHP
 //...
-$order = $adyenSdk->createOrder($data);
-$request = $adyenSdk->createRequest($order);
-$request->setType('credit-card');
+$request = $adyenSdk->createRequest($data);
 $request->setEncryptedData($hash);
-
 $manager = $adyenSdk->factoryManager('request');
 $response = $manager->submit($request);
 
@@ -83,12 +80,9 @@ $response = $manager->submit($request);
 ``` PHP
 //...
 $request->setType('boleto');
-$manager = $adyenSdk->factoryManager('request');
 $response = $manager->submit($request); //acesso à url do boleto e outras informações
 
 ```
-
-
 
 ---
 
@@ -109,20 +103,16 @@ phpunit --testdox | grep -vi php |  sed "s/.*\[*]/-/" | sed 's/.*Gpupo.*/&\'$'\n
 
 - Centraliza criacao de objetos
 
-### Order\Order
+### Payment\Request\Order\Order
 
-- Possui método ``getAmount()`` para acessar Amount
-- Possui método ``setAmount()`` que define Amount
-- Possui método ``getCurrency()`` para acessar Currency
-- Possui método ``setCurrency()`` que define Currency
-- Possui método ``getValue()`` para acessar Value
-- Possui método ``setValue()`` que define Value
-- Possui método ``getReference()`` para acessar Reference
-- Possui método ``setReference()`` que define Reference
-- Possui método ``getShopperIP()`` para acessar ShopperIP
-- Possui método ``setShopperIP()`` que define ShopperIP
-- Possui método ``getShopperEmail()`` para acessar ShopperEmail
-- Possui método ``setShopperEmail()`` que define ShopperEmail
-- Possui método ``getShopperReference()`` para acessar ShopperReference
-- Possui método ``setShopperReference()`` que define ShopperReference
+- Entidade é uma Coleção
+
+### Payment\Request\Request
+
+- Possui método ``getOrder()`` para acessar Order
+- Possui método ``setOrder()`` que define Order
+- Possui método ``getType()`` para acessar Type
+- Possui método ``setType()`` que define Type
+- Possui método ``getEncryptedData()`` para acessar EncryptedData
+- Possui método ``setEncryptedData()`` que define EncryptedData
 - Entidade é uma Coleção

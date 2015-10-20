@@ -15,10 +15,9 @@
 namespace Gpupo\AdyenSdk\Payment\Request\Decorator;
 
 use Gpupo\AdyenSdk\Payment\Request\Request;
-use Gpupo\CommonSdk\Entity\EntityAbstract;
-use Gpupo\CommonSdk\Entity\EntityInterface;
+use Gpupo\Common\Entity\CollectionAbstract;
 
-abstract class AbstractDecorator extends EntityAbstract implements EntityInterface
+abstract class AbstractDecorator extends CollectionAbstract
 {
     private $request;
 
@@ -34,5 +33,32 @@ abstract class AbstractDecorator extends EntityAbstract implements EntityInterfa
         }
 
         return $this->request;
+    }
+
+    protected function getOrder()
+    {
+        return $this->getRequest()->getOrder();
+    }
+
+    public function toArray()
+    {
+        return array_merge($this->getGenericFields(), $this->getCustomFields());
+    }
+
+    protected function getGenericFields()
+    {
+        return [
+            'merchantAccount' => $this->getRequest()->getMerchantAccount(),
+            'reference' => 'payment-'.$this->getOrder()->getId(),
+            'amount' => [
+                'currency'  => 'BRL',
+                'value'     => str_replace('.','', strval($this->getOrder()->getAmount())),
+            ],
+        ];
+    }
+
+    protected function getCustomFields()
+    {
+        return [];
     }
 }
