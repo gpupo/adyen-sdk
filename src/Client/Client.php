@@ -36,17 +36,15 @@ class Client extends ClientAbstract implements ClientInterface
 
     protected function renderAuthorization()
     {
-        $list = [];
-
         foreach (['client_user', 'client_password'] as $key) {
             $value = $this->getOptions()->get($key);
             if (empty($value)) {
                 throw new \InvalidArgumentException('[' . $key . '] ausente!');
             }
-
-            $list[] = $key . ':' . $value;
         }
 
-        return $list;
+        return 'Authorization: Basic '
+            .base64_encode($this->getOptions()->get('client_user').':'
+            .$this->getOptions()->get('client_password'));
     }
 }

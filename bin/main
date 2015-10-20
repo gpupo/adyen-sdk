@@ -19,23 +19,23 @@ use Gpupo\AdyenSdk\Console\Application;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-$app = new Application('adyen-sdk');
+$app = new Application('adyen-sdk', 1);
 $app->findConfig([__DIR__.'/../']);
 
 $transaction_create_parameters = [[
-    'key'   => 'order_json_file',
+    'key'   => 'request_json_file',
 ]];
 
-$app->register('payment:authorise')
+$app->register('payment:request')
     ->setDescription('Cria uma transação')
     ->setDefinition($app->factoryDefinition($transaction_create_parameters))
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($app, $transaction_create_parameters) {
         $list = $app->processInputParameters($transaction_create_parameters, $input, $output);
         $sdk = $app->factorySdk($list);
-        $data = json_decode(file_get_contents($list['order_json_file']), true);
-        $order = $sdk->createOrder($data);
-        $manager = $sdk->factoryManager('transaction');
-        $transaction = $manager->createFromOrder($order);
+        $data = json_decode(file_get_contents($list['request_json_file']), true);
+        $request = $sdk->createRequest($data);
+        $manager = $sdk->factoryManager('Request');
+        $transaction = $manager->submit($request);
 
         if ($transaction) {
             $output->writeln('<info>Successo!</info>');

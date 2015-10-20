@@ -25,12 +25,8 @@ class Request extends EntityAbstract implements EntityInterface
             'order'             => 'object',
             'type'              => 'string',
             'encryptedData'     => 'string',
+            'merchantAccount'   => 'string',
         ];
-    }
-
-    public function getMerchantAccount()
-    {
-        return 'foo';
     }
 
     protected function resolveDecorator()
