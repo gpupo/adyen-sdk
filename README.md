@@ -61,7 +61,7 @@ $adyenSdk->setLogger($logger);
 ```
 ## Transações
 
-Nos exemplos abaixo considere que ``$data`` possui [esta estrutura](https://github.com/gpupo/adyen-sdk/blob/master/Resources/fixtures/fixtures/payment/request/order.json)
+Nos exemplos abaixo considere que ``$data`` possui [esta estrutura](https://github.com/gpupo/adyen-sdk/blob/master/Resources/fixtures/payment/request/order.json)
 
 #### Criação de uma nova transação com cartão de crédito
 
