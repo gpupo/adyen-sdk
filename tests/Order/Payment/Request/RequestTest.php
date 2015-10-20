@@ -12,13 +12,13 @@
  * <http://www.g1mr.com/adyen-sdk/>.
  */
 
-namespace Gpupo\Tests\AdyenSdk\Payment\Request\Order;
+namespace Gpupo\Tests\AdyenSdk\Payment\Request;
 
 use Gpupo\Tests\AdyenSdk\EntityTestCaseAbstract;
 
-class OrderTest extends EntityTestCaseAbstract
+class RequestTest extends EntityTestCaseAbstract
 {
-    const QUALIFIED = '\Gpupo\AdyenSdk\Payment\Request\Order\Order';
+    const QUALIFIED = '\Gpupo\AdyenSdk\Payment\Request\Request';
 
     public static function setUpBeforeClass()
     {
@@ -29,13 +29,15 @@ class OrderTest extends EntityTestCaseAbstract
     public function dataProviderObject()
     {
         $expected = [
-            'id'                => 'string',
-            'shopper'           => 'object',
-            'amount'            => 'object',
-            'billingAddress'    => 'object',
-            'deliveryDate'      => 'string',
+            'order'             => 'object',
+            'type'              => 'string',
+            'encryptedData'     => 'string',
+            'reference'         => 'string',
+            'merchantAccount'   => 'string',
         ];
 
         return $this->dataProviderEntitySchema(self::QUALIFIED, $expected);
     }
+
+    
 }

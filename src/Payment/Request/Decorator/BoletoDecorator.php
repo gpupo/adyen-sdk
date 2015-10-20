@@ -16,5 +16,4 @@ namespace Gpupo\AdyenSdk\Payment\Request\Decorator;
 
 class BoletoDecorator extends AbstractDecorator
 {
-
 }

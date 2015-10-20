@@ -14,9 +14,9 @@
 
 namespace Gpupo\AdyenSdk\Payment\Request\Decorator;
 
+use Gpupo\AdyenSdk\Payment\Request\Request;
 use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
-use Gpupo\AdyenSdk\Payment\Request\Request;
 
 abstract class AbstractDecorator extends EntityAbstract implements EntityInterface
 {

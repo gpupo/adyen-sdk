@@ -14,16 +14,6 @@
 
 namespace Gpupo\AdyenSdk\Payment\Request\Order;
 
-use Gpupo\CommonSdk\Entity\EntityAbstract;
-use Gpupo\CommonSdk\Entity\EntityInterface;
-
-class Amount extends EntityAbstract implements EntityInterface
+class ShippingAddress extends BillingAddress
 {
-    public function getSchema()
-    {
-        return [
-            'currency'          => 'string',
-            'value'             => 'number',
-        ];
-    }
 }

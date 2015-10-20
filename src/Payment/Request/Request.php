@@ -14,10 +14,10 @@
 
 namespace Gpupo\AdyenSdk\Payment\Request;
 
+use Gpupo\AdyenSdk\Payment\Request\Decorator\BoletoDecorator;
+use Gpupo\AdyenSdk\Payment\Request\Decorator\CreditCardDecorator;
 use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
-use Gpupo\AdyenSdk\Payment\Request\Decorator\CreditCardDecorator;
-use Gpupo\AdyenSdk\Payment\Request\Decorator\BoletoDecorator;
 
 class Request extends EntityAbstract implements EntityInterface
 {
@@ -27,7 +27,6 @@ class Request extends EntityAbstract implements EntityInterface
             'order'             => 'object',
             'type'              => 'string',
             'encryptedData'     => 'string',
-            'reference'         => 'string',
             'merchantAccount'   => 'string',
         ];
     }
@@ -36,19 +35,20 @@ class Request extends EntityAbstract implements EntityInterface
     {
         $dict = [
             'credit-cart' => 'CreditCardDecorator',
+            'cc'          => 'CreditCardDecorator',
             'boleto'      => 'BoletoDecorator',
         ];
 
         $type = strtolower($this->getType());
 
         if (!array_key_exists($type, $dict)) {
-            throw new \InvalidArgumentException('Request type ['.$type.']not exist!');
+            throw new \InvalidArgumentException('Request type [' . $type . ']not exist!');
         }
 
         return $dict[$type];
     }
 
-    public function toJson()
+    public function toJson($route = null)
     {
         $decorator = $this->resolveDecorator();
         $instance = new $decorator();

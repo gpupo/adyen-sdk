@@ -14,8 +14,8 @@
 
 namespace Gpupo\AdyenSdk\Console;
 
-use Gpupo\CommonSdk\Console\AbstractApplication;
 use Gpupo\AdyenSdk\Factory;
+use Gpupo\CommonSdk\Console\AbstractApplication;
 
 class Application extends AbstractApplication
 {

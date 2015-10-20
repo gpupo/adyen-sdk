@@ -22,8 +22,8 @@ class Response extends EntityAbstract implements EntityInterface
     public function getSchema()
     {
         return [
-            "pspReference"  => "string",
-            "resultCode"    => "string",
+            'pspReference'  => 'string',
+            'resultCode'    => 'string',
             'authCode'      => 'string',
         ];
     }

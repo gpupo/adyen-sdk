@@ -26,7 +26,10 @@ class Order extends EntityAbstract implements EntityInterface
             'shopper'           => 'object',
             'amount'            => 'object',
             'billingAddress'    => 'object',
+            'shippingAddress'   => 'object',
+            'installments'      => 'integer',
             'deliveryDate'      => 'string',
+            'createdAt'         => 'string',
         ];
     }
 }
