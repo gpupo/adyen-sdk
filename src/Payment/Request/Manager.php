@@ -14,13 +14,13 @@
 
 namespace Gpupo\AdyenSdk\Payment\Request;
 
+use Gpupo\AdyenSdk\Factory;
+use Gpupo\AdyenSdk\Payment\Response\ExceptionResponse;
 use Gpupo\Common\Interfaces\OptionsInterface;
 use Gpupo\Common\Traits\OptionsTrait;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 use Gpupo\CommonSdk\Entity\ManagerAbstract;
 use Gpupo\CommonSdk\Response;
-use Gpupo\AdyenSdk\Payment\Response\ExceptionResponse;
-use Gpupo\AdyenSdk\Factory;
 
 /**
  * Gerenciamento de Transações Adyen.
@@ -53,7 +53,6 @@ class Manager extends ManagerAbstract implements OptionsInterface
         } catch (\Exception $exception) {
             return new ExceptionResponse($exception);
         }
-
     }
 
     protected function processExecute(Request $request, Response $response)

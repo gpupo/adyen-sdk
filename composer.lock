@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7c608e70d14c43f043ca312bbd02e8f3",
-    "content-hash": "3e80c026210bc450622c3d8ef5dd9440",
+    "hash": "62edeefe3f8f8254a57bfd76829f3417",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -407,16 +406,16 @@
         },
         {
             "name": "gpupo/cache",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gpupo/cache.git",
-                "reference": "a7b39b644016aa200e1aa79b006ba328cb800ebc"
+                "reference": "ea86e0806759c738569cdea49bd1a8f212eb85dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gpupo/cache/zipball/a7b39b644016aa200e1aa79b006ba328cb800ebc",
-                "reference": "a7b39b644016aa200e1aa79b006ba328cb800ebc",
+                "url": "https://api.github.com/repos/gpupo/cache/zipball/ea86e0806759c738569cdea49bd1a8f212eb85dc",
+                "reference": "ea86e0806759c738569cdea49bd1a8f212eb85dc",
                 "shasum": ""
             },
             "require": {
@@ -454,7 +453,7 @@
                 "cache",
                 "psr-6"
             ],
-            "time": "2015-08-18 14:42:25"
+            "time": "2015-10-20 17:44:17"
         },
         {
             "name": "gpupo/common",
@@ -504,16 +503,16 @@
         },
         {
             "name": "gpupo/common-sdk",
-            "version": "1.9.15",
+            "version": "1.9.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gpupo/common-sdk.git",
-                "reference": "ecc1902323bb64b452f0a7bb340395cba6e5c293"
+                "reference": "e4d205817661eecf55de45dbd871bde7fe37647a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gpupo/common-sdk/zipball/ecc1902323bb64b452f0a7bb340395cba6e5c293",
-                "reference": "ecc1902323bb64b452f0a7bb340395cba6e5c293",
+                "url": "https://api.github.com/repos/gpupo/common-sdk/zipball/e4d205817661eecf55de45dbd871bde7fe37647a",
+                "reference": "e4d205817661eecf55de45dbd871bde7fe37647a",
                 "shasum": ""
             },
             "require": {
@@ -550,7 +549,7 @@
             "keywords": [
                 "sdk"
             ],
-            "time": "2015-09-14 14:36:41"
+            "time": "2015-10-19 19:01:10"
         },
         {
             "name": "psr/log",
@@ -655,12 +654,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeclimate/php-test-reporter.git",
-                "reference": "85b5de950678a25f3e85adb6bc26de7f7f231d18"
+                "reference": "892163d67e3bd9c190d43655acb69657da765c7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeclimate/php-test-reporter/zipball/85b5de950678a25f3e85adb6bc26de7f7f231d18",
-                "reference": "85b5de950678a25f3e85adb6bc26de7f7f231d18",
+                "url": "https://api.github.com/repos/codeclimate/php-test-reporter/zipball/892163d67e3bd9c190d43655acb69657da765c7b",
+                "reference": "892163d67e3bd9c190d43655acb69657da765c7b",
                 "shasum": ""
             },
             "require": {
@@ -679,7 +678,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.1.x-dev"
+                    "dev-master": "0.2.x-dev"
                 }
             },
             "autoload": {
@@ -705,7 +704,7 @@
                 "codeclimate",
                 "coverage"
             ],
-            "time": "2015-09-08 14:22:33"
+            "time": "2015-10-15 14:41:10"
         },
         {
             "name": "doctrine/instantiator",
@@ -1284,16 +1283,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.13",
+            "version": "4.8.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "be067d6105286b74272facefc2697038f8807b77"
+                "reference": "b4900675926860bef091644849305399b986efa2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/be067d6105286b74272facefc2697038f8807b77",
-                "reference": "be067d6105286b74272facefc2697038f8807b77",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b4900675926860bef091644849305399b986efa2",
+                "reference": "b4900675926860bef091644849305399b986efa2",
                 "shasum": ""
             },
             "require": {
@@ -1352,7 +1351,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-10-14 13:49:40"
+            "time": "2015-10-17 15:03:30"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

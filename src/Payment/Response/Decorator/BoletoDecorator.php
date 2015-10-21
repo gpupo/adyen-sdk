@@ -52,5 +52,4 @@ class BoletoDecorator extends AbstractDecorator
 
         return $data;
     }
-
 }
