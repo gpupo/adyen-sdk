@@ -76,11 +76,14 @@ $response = $manager->submit($request);
 
 #### Criação de uma nova transação com boleto bancário
 
-
 ``` PHP
 //...
 $request->setType('boleto');
 $response = $manager->submit($request); //acesso à url do boleto e outras informações
+$response->getBarCodeReference(); // Linha digitável
+$response->getExpirationDate(); // Data de Vencimento
+$response->getUrl(); // Url Do Boleto
+$response->getData(); // Parâmetro usado para compor a url para o boleto
 
 ```
 
@@ -105,6 +108,21 @@ phpunit --testdox | grep -vi php |  sed "s/.*\[*]/-/" | sed 's/.*Gpupo.*/&\'$'\n
 
 ### Payment\Request\Order\Order
 
+- Possui método ``getId()`` para acessar Id
+- Possui método ``setId()`` que define Id
+- Possui método ``getShopper()`` para acessar Shopper
+- Possui método ``setShopper()`` que define Shopper
+- Possui método ``getAmount()`` e ``setAmount()`` para acessar e definir Amount
+- Possui método ``getBillingAddress()`` para acessar BillingAddress
+- Possui método ``setBillingAddress()`` que define BillingAddress
+- Possui método ``getShippingAddress()`` para acessar ShippingAddress
+- Possui método ``setShippingAddress()`` que define ShippingAddress
+- Possui método ``getInstallments()`` para acessar Installments
+- Possui método ``setInstallments()`` que define Installments
+- Possui método ``getDeliveryDate()`` para acessar DeliveryDate
+- Possui método ``setDeliveryDate()`` que define DeliveryDate
+- Possui método ``getCreatedAt()`` para acessar CreatedAt
+- Possui método ``setCreatedAt()`` que define CreatedAt
 - Entidade é uma Coleção
 
 ### Payment\Request\Request
@@ -116,3 +134,4 @@ phpunit --testdox | grep -vi php |  sed "s/.*\[*]/-/" | sed 's/.*Gpupo.*/&\'$'\n
 - Possui método ``getEncryptedData()`` para acessar EncryptedData
 - Possui método ``setEncryptedData()`` que define EncryptedData
 - Entidade é uma Coleção
+
