@@ -73,23 +73,14 @@ class OrderTest extends EntityTestCaseAbstract
     }
 
     /**
-     * @testdox Possui método ``getAmount()`` para acessar Amount
+     * @testdox Possui método ``getAmount()`` e ``setAmount()`` para acessar e definir Amount
      * @dataProvider dataProviderObject
      * @test
      */
-    public function getterAmount(EntityInterface $object, $expected = null)
+    public function getterAmount(EntityInterface $object)
     {
-        $this->assertSchemaGetter('amount', 'number', $object, $expected);
-    }
-
-    /**
-     * @testdox Possui método ``setAmount()`` que define Amount
-     * @dataProvider dataProviderObject
-     * @test
-     */
-    public function setterAmount(EntityInterface $object, $expected = null)
-    {
-        $this->assertSchemaSetter('amount', 'number', $object);
+        $object->setAmount(129.01);
+        $this->assertEquals(129.01, $object->getAmount());
     }
 
     /**
