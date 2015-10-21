@@ -14,10 +14,11 @@
 
 namespace Gpupo\AdyenSdk\Payment\Request;
 
-use Gpupo\CommonSdk\Entity\ManagerAbstract;
-use Gpupo\CommonSdk\Entity\EntityInterface;
-use Gpupo\Common\Traits\OptionsTrait;
 use Gpupo\Common\Interfaces\OptionsInterface;
+use Gpupo\Common\Traits\OptionsTrait;
+use Gpupo\CommonSdk\Entity\EntityInterface;
+use Gpupo\CommonSdk\Entity\ManagerAbstract;
+
 /**
  * Gerenciamento de Transações Adyen.
  */
@@ -41,6 +42,7 @@ class Manager extends ManagerAbstract implements OptionsInterface
     public function submit(Request $request)
     {
         $request->setMerchantAccount($this->getOptions()->get('merchant_account'));
+
         return $this->execute($this->factoryMap('submit'), $request->toJson());
     }
 }

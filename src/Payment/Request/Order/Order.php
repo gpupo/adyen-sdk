@@ -18,7 +18,6 @@ use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 
 /**
- *
  * @method string getId()    Acesso a id
  * @method setId(string $id)    Define id
  * @method Gpupo\AdyenSdk\Payment\Request\Order\Shopper getShopper()    Acesso a shopper
@@ -35,7 +34,6 @@ use Gpupo\CommonSdk\Entity\EntityInterface;
  * @method setDeliveryDate(string $deliveryDate)    Define deliveryDate
  * @method string getCreatedAt()    Acesso a createdAt
  * @method setCreatedAt(string $createdAt)    Define createdAt
- *
  */
 class Order extends EntityAbstract implements EntityInterface
 {

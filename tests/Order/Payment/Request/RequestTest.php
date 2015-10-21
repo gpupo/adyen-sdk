@@ -14,8 +14,8 @@
 
 namespace Gpupo\Tests\AdyenSdk\Payment\Request;
 
-use Gpupo\Tests\AdyenSdk\EntityTestCaseAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
+use Gpupo\Tests\AdyenSdk\EntityTestCaseAbstract;
 
 class RequestTest extends EntityTestCaseAbstract
 {
@@ -37,7 +37,7 @@ class RequestTest extends EntityTestCaseAbstract
 
         return $this->dataProviderEntitySchema(self::QUALIFIED, $expected);
     }
-    
+
     /**
      * @testdox Possui método ``getOrder()`` para acessar Order
      * @dataProvider dataProviderObject
@@ -97,5 +97,4 @@ class RequestTest extends EntityTestCaseAbstract
     {
         $this->assertSchemaSetter('encryptedData', 'string', $object);
     }
-
 }

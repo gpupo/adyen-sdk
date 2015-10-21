@@ -44,7 +44,7 @@ class Client extends ClientAbstract implements ClientInterface
         }
 
         return 'Authorization: Basic '
-            .base64_encode($this->getOptions()->get('client_user').':'
-            .$this->getOptions()->get('client_password'));
+            . base64_encode($this->getOptions()->get('client_user') . ':'
+            . $this->getOptions()->get('client_password'));
     }
 }

@@ -22,11 +22,10 @@ class CreditCardDecorator extends AbstractDecorator
             'shopperEmail'      => $this->getOrder()->getShopper()->getEmail(),
             'shopperIP'         => $this->getOrder()->getShopper()->getIp(),
             'shopperReference'  => $this->getOrder()->getShopper()->getFullName(),
-            'installments'      => ['value'=>$this->getOrder()->getInstallments()],
-            'additionalData' => [
+            'installments'      => ['value' => $this->getOrder()->getInstallments()],
+            'additionalData'    => [
                 'card.encrypted.json' => $this->getRequest()->getEncryptedData(),
             ],
         ];
     }
-
 }

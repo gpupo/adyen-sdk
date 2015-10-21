@@ -42,6 +42,4 @@ class Shopper extends EntityAbstract implements EntityInterface
             'lastName'  => $this->getLastName(),
         ];
     }
-
-
 }
