@@ -14,9 +14,9 @@
 
 namespace Gpupo\AdyenSdk\Payment\Request;
 
+use Gpupo\AdyenSdk\Factory;
 use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
-use Gpupo\AdyenSdk\Factory;
 
 class Request extends EntityAbstract implements EntityInterface
 {

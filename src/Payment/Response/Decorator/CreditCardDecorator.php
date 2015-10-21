@@ -16,5 +16,4 @@ namespace Gpupo\AdyenSdk\Payment\Response\Decorator;
 
 class CreditCardDecorator extends AbstractDecorator
 {
-    
 }

@@ -18,5 +18,4 @@ use Gpupo\AdyenSdk\Payment\Response\Decorator\AbstractDecorator;
 
 class ExceptionResponse extends AbstractDecorator
 {
-
 }
