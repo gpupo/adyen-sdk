@@ -1,0 +1,24 @@
+{
+    "order": {
+        "id": "773456",
+        "shopper": {
+            "firstName": "Mill",
+            "lastName": "Jay",
+            "ip": "192.168.88.2",
+            "email": "mill@example.com",
+            "socialSecurityNumber": 38708608474
+        },
+        "billingAddress": {
+            "city": "São Paulo",
+            "country": "Brasil",
+            "houseNumberOrName": "12",
+            "postalCode": "021901011",
+            "stateOrProvince": "SP",
+            "street": "R.Example"
+        },
+        "amount": 1289.1,
+        "deliveryDate": "2015-10-20 00:00:00",
+        "createdAt": "2015-10-10 15:10:31"
+    },
+    "type": "boleto"
+}
