@@ -21,11 +21,11 @@ class BoletoDecorator extends AbstractDecorator
         return [
             'shopperName'           => $this->getOrder()->getShopper()->getFullName(),
             'socialSecurityNumber'  => $this->getOrder()->getShopper()->getSocialSecurityNumber(),
-            'billingAddress'        => $this->getOrder()->getBillingAddress(),
+            'billingAddress'        => $this->getOrder()->getBillingAddress()->toArray(),
             'shopperName'           => $this->getOrder()->getShopper()->getArrayName(),
             'shopperStatement'      => 'Não aceitar após o vencimento. Não aceitar o pagamento com cheque',
-            'selectedBrand'         => 'boletobancario_bradesco',
-            'deliveryDate'          => '2015-10-21T23:00:00.000Z',
+            'selectedBrand'         => 'boletobancario_santander',
+            'deliveryDate'          => '2015-10-22T23:00:00.000Z',
         ];
     }
 }
