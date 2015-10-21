@@ -19,6 +19,8 @@ use Gpupo\CommonSdk\FactoryAbstract;
 
 class Factory extends FactoryAbstract
 {
+    const PACKAGENAME = '\Gpupo\AdyenSdk\\';
+
     public function setClient(array $clientOptions = [])
     {
         $this->client = new Client($clientOptions, $this->logger);
@@ -26,7 +28,7 @@ class Factory extends FactoryAbstract
 
     public function getNamespace()
     {
-        return '\Gpupo\AdyenSdk\\';
+        return self::PACKAGENAME;
     }
 
     protected function getSchema($namespace = null)

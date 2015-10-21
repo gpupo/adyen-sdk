@@ -16,6 +16,7 @@ namespace Gpupo\AdyenSdk\Payment\Request;
 
 use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
+use Gpupo\AdyenSdk\Factory;
 
 class Request extends EntityAbstract implements EntityInterface
 {
@@ -29,7 +30,7 @@ class Request extends EntityAbstract implements EntityInterface
         ];
     }
 
-    protected function resolveDecorator()
+    public function getDecoratorName()
     {
         $dict = [
             'credit-cart' => 'CreditCardDecorator',
@@ -43,7 +44,14 @@ class Request extends EntityAbstract implements EntityInterface
             throw new \InvalidArgumentException('Request type [' . $type . ']not exist!');
         }
 
-        $className = '\Gpupo\AdyenSdk\Payment\Request\Decorator\\' . $dict[$type];
+        return $dict[$type];
+    }
+
+    protected function resolveDecorator()
+    {
+        $className = Factory::PACKAGENAME
+            . 'Payment\Request\Decorator\\' . $this->getDecoratorName();
+
         if (!class_exists($className)) {
             throw new \InvalidArgumentException('Request type [' . $type . '] not supported!');
         }

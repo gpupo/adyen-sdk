@@ -18,6 +18,7 @@ require __DIR__.'/../vendor/autoload.php';
 use Gpupo\AdyenSdk\Console\Application;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Gpupo\AdyenSdk\Payment\Response\Decorator\BoletoDecorator;
 
 $app = new Application('adyen-sdk', 1);
 $app->findConfig([__DIR__.'/../']);
@@ -39,7 +40,12 @@ $app->register('payment:request')
 
         if ($transaction) {
             $output->writeln('<info>Successo!</info>');
-            var_dump($transaction);
+
+            if($transaction instanceof BoletoDecorator) {
+                $output->writeln('Linha digitável <info>'.$transaction->getBarCodeReference().'</info>');
+                $output->writeln('Vencimento <info>'.$transaction->getExpirationDate().'</info>');
+                $output->writeln('Url <info>'.$transaction->getUrl().'</info>');
+            }
         } else {
             $output->writeln('<error>Erro na criação da transação</error>');
         }

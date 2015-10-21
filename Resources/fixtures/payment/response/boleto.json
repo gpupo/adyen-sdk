@@ -1,0 +1,11 @@
+{
+    "additionaldata" : {
+        "boletobancario.url" : "https://test.adyen.com/hpp/generationBoleto.shtml?data=AgABAQAk5QYbuNl9TiV63c5KeLTvXpB03Ml3krv%2FtwYj....2FFq3920vVWRd5HKHT96mCdVXyo4Gzq%2BTkzNbmT2XcgFf%2FwhYkU4%3D",
+        "boletobancario.data" : "AgABAQAk5QYbuNl9TiV63c5KeLTvXpB03Ml3krv/twYj....2FFq3920vVWRd5HKHT96mCdVXyo4Gzq+TkzNbmT2XcgFf/whYkU4=",
+        "boletobancario.expirationDate" : "2015-10-19",
+        "boletobancario.dueDate" : "2015-10-12"
+    },
+
+    "pspReference" : "8813760397300101",
+    "resultCode" : "Received"
+}
