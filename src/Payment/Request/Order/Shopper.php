@@ -29,4 +29,9 @@ class Shopper extends EntityAbstract implements EntityInterface
             'socialSecurityNumber'  => 'integer',
         ];
     }
+
+    public function getFullName()
+    {
+        return $this->getFirstName() . ' ' . $this->getLastName();
+    }
 }
