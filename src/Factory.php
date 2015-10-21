@@ -16,7 +16,6 @@ namespace Gpupo\AdyenSdk;
 
 use Gpupo\AdyenSdk\Client\Client;
 use Gpupo\CommonSdk\FactoryAbstract;
-use Psr\Log\LoggerInterface;
 
 class Factory extends FactoryAbstract
 {
@@ -42,5 +41,4 @@ class Factory extends FactoryAbstract
             ],
         ];
     }
-
 }

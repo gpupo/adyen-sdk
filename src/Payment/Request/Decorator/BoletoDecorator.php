@@ -23,9 +23,9 @@ class BoletoDecorator extends AbstractDecorator
             'socialSecurityNumber'  => $this->getOrder()->getShopper()->getSocialSecurityNumber(),
             'billingAddress'        => $this->getOrder()->getBillingAddress(),
             'shopperName'           => $this->getOrder()->getShopper()->getArrayName(),
-            "shopperStatement"      => "Não aceitar após o vencimento. Não aceitar o pagamento com cheque",
-            "selectedBrand"         => "boletobancario_bradesco",
-            "deliveryDate"          => "2015-10-21T23:00:00.000Z",
+            'shopperStatement'      => 'Não aceitar após o vencimento. Não aceitar o pagamento com cheque',
+            'selectedBrand'         => 'boletobancario_bradesco',
+            'deliveryDate'          => '2015-10-21T23:00:00.000Z',
         ];
     }
 }

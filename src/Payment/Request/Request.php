@@ -43,7 +43,7 @@ class Request extends EntityAbstract implements EntityInterface
             throw new \InvalidArgumentException('Request type [' . $type . ']not exist!');
         }
 
-        $className = '\Gpupo\AdyenSdk\Payment\Request\Decorator\\'.$dict[$type];
+        $className = '\Gpupo\AdyenSdk\Payment\Request\Decorator\\' . $dict[$type];
         if (!class_exists($className)) {
             throw new \InvalidArgumentException('Request type [' . $type . '] not supported!');
         }

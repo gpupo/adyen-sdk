@@ -14,8 +14,8 @@
 
 namespace Gpupo\Tests\AdyenSdk\Payment\Request\Order;
 
-use Gpupo\Tests\AdyenSdk\EntityTestCaseAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
+use Gpupo\Tests\AdyenSdk\EntityTestCaseAbstract;
 
 class OrderTest extends EntityTestCaseAbstract
 {
@@ -191,5 +191,4 @@ class OrderTest extends EntityTestCaseAbstract
     {
         $this->assertSchemaSetter('createdAt', 'string', $object);
     }
-
 }

@@ -40,5 +40,4 @@ abstract class EntityTestCaseAbstract extends TestCaseAbstract
 
         return $this->getResourceJson($dict[$route]);
     }
-
 }
