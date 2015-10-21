@@ -15,6 +15,7 @@
 namespace Gpupo\Tests\AdyenSdk\Payment\Request\Order;
 
 use Gpupo\Tests\AdyenSdk\EntityTestCaseAbstract;
+use Gpupo\CommonSdk\Entity\EntityInterface;
 
 class OrderTest extends EntityTestCaseAbstract
 {
@@ -28,14 +29,167 @@ class OrderTest extends EntityTestCaseAbstract
 
     public function dataProviderObject()
     {
-        $expected = [
-            'id'                => 'string',
-            'shopper'           => 'object',
-            'amount'            => 'object',
-            'billingAddress'    => 'object',
-            'deliveryDate'      => 'string',
-        ];
-
-        return $this->dataProviderEntitySchema(self::QUALIFIED, $expected);
+        return $this->dataProviderEntitySchema(self::QUALIFIED, $this->getData('order'));
     }
+
+    /**
+     * @testdox Possui método ``getId()`` para acessar Id
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function getterId(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaGetter('id', 'string', $object, $expected);
+    }
+
+    /**
+     * @testdox Possui método ``setId()`` que define Id
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function setterId(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaSetter('id', 'string', $object);
+    }
+
+    /**
+     * @testdox Possui método ``getShopper()`` para acessar Shopper
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function getterShopper(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaGetter('shopper', 'object', $object, $expected);
+    }
+
+    /**
+     * @testdox Possui método ``setShopper()`` que define Shopper
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function setterShopper(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaSetter('shopper', 'object', $object);
+    }
+
+    /**
+     * @testdox Possui método ``getAmount()`` para acessar Amount
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function getterAmount(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaGetter('amount', 'number', $object, $expected);
+    }
+
+    /**
+     * @testdox Possui método ``setAmount()`` que define Amount
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function setterAmount(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaSetter('amount', 'number', $object);
+    }
+
+    /**
+     * @testdox Possui método ``getBillingAddress()`` para acessar BillingAddress
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function getterBillingAddress(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaGetter('billingAddress', 'object', $object, $expected);
+    }
+
+    /**
+     * @testdox Possui método ``setBillingAddress()`` que define BillingAddress
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function setterBillingAddress(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaSetter('billingAddress', 'object', $object);
+    }
+
+    /**
+     * @testdox Possui método ``getShippingAddress()`` para acessar ShippingAddress
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function getterShippingAddress(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaGetter('shippingAddress', 'object', $object, $expected);
+    }
+
+    /**
+     * @testdox Possui método ``setShippingAddress()`` que define ShippingAddress
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function setterShippingAddress(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaSetter('shippingAddress', 'object', $object);
+    }
+
+    /**
+     * @testdox Possui método ``getInstallments()`` para acessar Installments
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function getterInstallments(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaGetter('installments', 'integer', $object, $expected);
+    }
+
+    /**
+     * @testdox Possui método ``setInstallments()`` que define Installments
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function setterInstallments(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaSetter('installments', 'integer', $object);
+    }
+
+    /**
+     * @testdox Possui método ``getDeliveryDate()`` para acessar DeliveryDate
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function getterDeliveryDate(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaGetter('deliveryDate', 'string', $object, $expected);
+    }
+
+    /**
+     * @testdox Possui método ``setDeliveryDate()`` que define DeliveryDate
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function setterDeliveryDate(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaSetter('deliveryDate', 'string', $object);
+    }
+
+    /**
+     * @testdox Possui método ``getCreatedAt()`` para acessar CreatedAt
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function getterCreatedAt(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaGetter('createdAt', 'string', $object, $expected);
+    }
+
+    /**
+     * @testdox Possui método ``setCreatedAt()`` que define CreatedAt
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function setterCreatedAt(EntityInterface $object, $expected = null)
+    {
+        $this->assertSchemaSetter('createdAt', 'string', $object);
+    }
+
 }

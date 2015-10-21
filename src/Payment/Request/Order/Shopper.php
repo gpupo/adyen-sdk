@@ -34,4 +34,14 @@ class Shopper extends EntityAbstract implements EntityInterface
     {
         return $this->getFirstName() . ' ' . $this->getLastName();
     }
+
+    public function getArrayName()
+    {
+        return [
+            'firstName' => $this->getFirstName(),
+            'lastName'  => $this->getLastName(),
+        ];
+    }
+
+
 }

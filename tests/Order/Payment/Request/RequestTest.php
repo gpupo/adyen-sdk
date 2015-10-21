@@ -37,13 +37,6 @@ class RequestTest extends EntityTestCaseAbstract
 
         return $this->dataProviderEntitySchema(self::QUALIFIED, $expected);
     }
-
-    protected function factoryRequest()
-    {
-        $data = $this->getResourceJson('fixtures/payment/request/request.json');
-
-        return $this->getFactory()->createRequest($data);
-    }
     
     /**
      * @testdox Possui método ``getOrder()`` para acessar Order
