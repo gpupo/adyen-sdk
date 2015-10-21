@@ -1,23 +1,30 @@
 {
-    "id": "",
+    "id": "123456",
     "shopper": {
-        "firstName": "",
-        "lastName": "",
-        "ip": "",
-        "email": "",
-        "socialSecurityNumber": 0
-    },
-    "amount": {
-        "currency": "",
-        "value": 0
+        "firstName": "Hello",
+        "lastName": "Kay",
+        "ip": "192.168.88.1",
+        "email": "kay@example.com",
+        "socialSecurityNumber": 38708608474
     },
     "billingAddress": {
-        "city": "",
-        "country": "",
-        "houseNumberOrName": "",
-        "postalCode": "",
-        "stateOrProvince": "",
-        "street": ""
+        "city": "São Paulo",
+        "country": "Brasil",
+        "houseNumberOrName": "12",
+        "postalCode": "021901011",
+        "stateOrProvince": "SP",
+        "street": "R.Example"
     },
-    "deliveryDate": ""
+    "shippingAddress": {
+        "city": "São Paulo",
+        "country": "Brasil",
+        "houseNumberOrName": "12",
+        "postalCode": "021901011",
+        "stateOrProvince": "SP",
+        "street": "R.Example"
+    },
+    "amount": 289.1,
+    "installments": 4,
+    "deliveryDate": "2015-10-20 00:00:00",
+    "createdAt": "2015-10-10 15:10:31"
 }
