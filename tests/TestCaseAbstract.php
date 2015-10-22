@@ -45,4 +45,25 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
 
         return $this->factory;
     }
+
+    protected function factoryRequest()
+    {
+        return $this->getFactory()->createRequest($this->getData('request'));
+    }
+
+    protected function factoryOrder()
+    {
+        return $this->getFactory()->createOrder($this->getData('order'));
+    }
+
+    protected function getData($route)
+    {
+        $dict = [
+            'request'   => 'fixtures/payment/request/request.json',
+            'boleto'    => 'fixtures/payment/request/request-boleto.json',
+            'order'     => 'fixtures/payment/request/order.json',
+        ];
+
+        return $this->getResourceJson($dict[$route]);
+    }
 }
