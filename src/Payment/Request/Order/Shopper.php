@@ -17,6 +17,19 @@ namespace Gpupo\AdyenSdk\Payment\Request\Order;
 use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 
+/**
+ *
+ * @method string getFirstName()    Acesso a firstName
+ * @method setFirstName(string $firstName)    Define firstName
+ * @method string getLastName()    Acesso a lastName
+ * @method setLastName(string $lastName)    Define lastName
+ * @method string getIp()    Acesso a ip
+ * @method setIp(string $ip)    Define ip
+ * @method string getEmail()    Acesso a email
+ * @method setEmail(string $email)    Define email
+ * @method setSocialSecurityNumber(string $socialSecurityNumber)    Define socialSecurityNumber
+ *
+ */
 class Shopper extends EntityAbstract implements EntityInterface
 {
     public function getSchema()
@@ -26,7 +39,7 @@ class Shopper extends EntityAbstract implements EntityInterface
             'lastName'              => 'string',
             'ip'                    => 'string',
             'email'                 => 'string',
-            'socialSecurityNumber'  => 'integer',
+            'socialSecurityNumber'  => 'string',
         ];
     }
 
