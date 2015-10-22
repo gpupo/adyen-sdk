@@ -10,19 +10,19 @@
         },
         "billingAddress": {
             "city": "São Paulo",
-            "country": "Brasil",
-            "houseNumberOrName": "12",
-            "postalCode": "021901011",
+            "country": "BR",
+            "houseNumberOrName": "155",
+            "postalCode": "11070000",
             "stateOrProvince": "SP",
-            "street": "R.Example"
+            "street": "Rua Saturnino de Brito"
         },
         "shippingAddress": {
             "city": "São Paulo",
-            "country": "Brasil",
-            "houseNumberOrName": "12",
-            "postalCode": "021901011",
+            "country": "BR",
+            "houseNumberOrName": "155",
+            "postalCode": "11070000",
             "stateOrProvince": "SP",
-            "street": "R.Example"
+            "street": "Rua Saturnino de Brito"
         },
         "amount": 289.1,
         "installments": 4,

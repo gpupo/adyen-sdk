@@ -15,7 +15,7 @@
 namespace Gpupo\AdyenSdk\Payment\Request;
 
 use Gpupo\AdyenSdk\Factory;
-use Gpupo\AdyenSdk\Payment\Response\ExceptionResponse;
+use Gpupo\AdyenSdk\Payment\Response\Decorator\ProblematicDecorator;
 use Gpupo\Common\Interfaces\OptionsInterface;
 use Gpupo\Common\Traits\OptionsTrait;
 use Gpupo\CommonSdk\Entity\EntityInterface;
@@ -51,7 +51,7 @@ class Manager extends ManagerAbstract implements OptionsInterface
 
             return $this->processExecute($request, $response);
         } catch (\Exception $exception) {
-            return new ExceptionResponse($exception);
+            return new ProblematicDecorator($exception);
         }
     }
 
