@@ -12,10 +12,8 @@
  * <http://www.g1mr.com/adyen-sdk/>.
  */
 
-namespace Gpupo\AdyenSdk\Payment\Response;
+namespace Gpupo\AdyenSdk\Payment\Response\Decorator;
 
-use Gpupo\AdyenSdk\Payment\Response\Decorator\AbstractDecorator;
-
-class ExceptionResponse extends AbstractDecorator
+class ProblematicDecorator extends AbstractDecorator
 {
 }
