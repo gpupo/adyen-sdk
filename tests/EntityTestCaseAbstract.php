@@ -19,25 +19,4 @@ use Gpupo\Tests\CommonSdk\Traits\EntityTrait;
 abstract class EntityTestCaseAbstract extends TestCaseAbstract
 {
     use EntityTrait;
-
-    protected function factoryRequest()
-    {
-        return $this->getFactory()->createRequest($this->getData('request'));
-    }
-
-    protected function factoryOrder()
-    {
-        return $this->getFactory()->createOrder($this->getData('order'));
-    }
-
-    protected function getData($route)
-    {
-        $dict = [
-            'request'   => 'fixtures/payment/request/order/request.json',
-            'boleto'    => 'fixtures/payment/request/order/request-boleto.json',
-            'order'     => 'fixtures/payment/request/order.json',
-        ];
-
-        return $this->getResourceJson($dict[$route]);
-    }
 }
