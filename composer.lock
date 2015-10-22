@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "62edeefe3f8f8254a57bfd76829f3417",
+    "content-hash": "3e80c026210bc450622c3d8ef5dd9440",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -503,16 +504,16 @@
         },
         {
             "name": "gpupo/common-sdk",
-            "version": "1.9.16",
+            "version": "1.9.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gpupo/common-sdk.git",
-                "reference": "e4d205817661eecf55de45dbd871bde7fe37647a"
+                "reference": "2895a91ae39514f9944a4e8702d76a46efdc62a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gpupo/common-sdk/zipball/e4d205817661eecf55de45dbd871bde7fe37647a",
-                "reference": "e4d205817661eecf55de45dbd871bde7fe37647a",
+                "url": "https://api.github.com/repos/gpupo/common-sdk/zipball/2895a91ae39514f9944a4e8702d76a46efdc62a6",
+                "reference": "2895a91ae39514f9944a4e8702d76a46efdc62a6",
                 "shasum": ""
             },
             "require": {
@@ -549,7 +550,7 @@
             "keywords": [
                 "sdk"
             ],
-            "time": "2015-10-19 19:01:10"
+            "time": "2015-10-20 19:08:06"
         },
         {
             "name": "psr/log",
@@ -1283,16 +1284,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.14",
+            "version": "4.8.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "b4900675926860bef091644849305399b986efa2"
+                "reference": "be8f7b9eacf8243940f8412f8b4a9a434c73dd7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b4900675926860bef091644849305399b986efa2",
-                "reference": "b4900675926860bef091644849305399b986efa2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/be8f7b9eacf8243940f8412f8b4a9a434c73dd7b",
+                "reference": "be8f7b9eacf8243940f8412f8b4a9a434c73dd7b",
                 "shasum": ""
             },
             "require": {
@@ -1351,7 +1352,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-10-17 15:03:30"
+            "time": "2015-10-22 09:05:37"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
