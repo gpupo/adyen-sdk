@@ -59,11 +59,12 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
     protected function getData($route)
     {
         $dict = [
-            'request'           => 'fixtures/payment/request/request.json',
-            'boleto'            => 'fixtures/payment/request/request-boleto.json',
-            'order'             => 'fixtures/payment/request/order.json',
-            'response.boleto'   => 'fixtures/payment/response/boleto.json',
-            'response.cc'       => 'fixtures/payment/response/cc.json',
+            'request'               => 'fixtures/payment/request/request.json',
+            'boleto'                => 'fixtures/payment/request/request-boleto.json',
+            'order'                 => 'fixtures/payment/request/order.json',
+            'response.boleto'       => 'fixtures/payment/response/boleto.json',
+            'response.cc'           => 'fixtures/payment/response/cc.json',
+            'response.problematic'  => 'fixtures/payment/response/problematic.json',
         ];
 
         return $this->getResourceJson($dict[$route]);
