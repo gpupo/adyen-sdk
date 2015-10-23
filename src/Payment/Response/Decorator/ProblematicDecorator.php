@@ -22,6 +22,8 @@ class ProblematicDecorator extends ErrorDecorator
         return array_merge($list,[
             'refusalReason' => 'string',
             'errorCode'     => 'string',
+            'errorType'     => 'string',
+            'message'       => 'string',
         ]);
     }
 }

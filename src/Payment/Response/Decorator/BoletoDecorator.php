@@ -52,6 +52,6 @@ class BoletoDecorator extends AbstractDecorator implements SuccessInterface
             }
         }
 
-        return $data;
+        return parent::beforeConstruct($data);
     }
 }

@@ -18,24 +18,13 @@ use Gpupo\Tests\AdyenSdk\TestCaseAbstract;
 
 class ManagerTest extends TestCaseAbstract
 {
-    protected function getManager($fixture = null, $statusCode = 200)
-    {
-        $manager = $this->getFactory()->factoryManager('request');
-
-        if (!empty($fixture)) {
-            $manager->setDryRun($this->factoryResponseFromFixture('fixtures/payment/response/' . $fixture, $statusCode));
-        }
-
-        return $manager;
-    }
-
     /**
      * @testdox É o administrador de requisições
      * @test
      */
     public function instance()
     {
-        $manager = $this->getManager();
+        $manager = $this->getRequestManager();
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Request\Manager', $manager);
 
         return $manager;
@@ -47,10 +36,11 @@ class ManagerTest extends TestCaseAbstract
      */
     public function requestBoleto()
     {
-        $manager = $this->getManager('boleto.json');
+        $manager = $this->getRequestManager('boleto.json');
         $request = $this->factoryRequest('boleto');
         $response = $manager->submit($request);
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\AbstractDecorator', $response);
+        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\SuccessInterface', $response);
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\BoletoDecorator', $response);
     }
 
@@ -60,10 +50,11 @@ class ManagerTest extends TestCaseAbstract
      */
     public function requestCreditCard()
     {
-        $manager = $this->getManager('cc.json');
+        $manager = $this->getRequestManager('cc.json');
         $request = $this->factoryRequest();
         $response = $manager->submit($request);
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\AbstractDecorator', $response);
+        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\SuccessInterface', $response);
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\CreditCardDecorator', $response);
     }
 
@@ -73,15 +64,12 @@ class ManagerTest extends TestCaseAbstract
      */
     public function requestProblematic()
     {
-        $manager = $this->getManager('problematic.json', 422);
+        $manager = $this->getRequestManager('problematic.json', 422);
         $request = $this->factoryRequest();
         $response = $manager->submit($request);
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\AbstractDecorator', $response);
+        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\FailInterface', $response);
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\ProblematicDecorator', $response);
     }
-
-
-
-
 
 }
