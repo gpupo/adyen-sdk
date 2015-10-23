@@ -16,7 +16,7 @@ namespace Gpupo\Tests\AdyenSdk\Payment\Response\Decorator;
 
 use Gpupo\AdyenSdk\Payment\Response\Decorator\BoletoDecorator;
 
-class BoletoDecoratorTest extends abstractDecorator
+class BoletoDecoratorTest extends AbstractDecorator
 {
     protected function factoryDecorator()
     {
@@ -29,6 +29,8 @@ class BoletoDecoratorTest extends abstractDecorator
     public function testCustomFields()
     {
         $decorator = $this->factoryDecorator();
+        $this->assertEquals('8813760397300101', $decorator->getPspReference());
+        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\SuccessInterface', $decorator);
         $this->assertEquals('2015-10-19', $decorator->getExpirationDate());
         $this->assertEquals('Received', $decorator->getResultCode());
     }

@@ -16,7 +16,7 @@ namespace Gpupo\Tests\AdyenSdk\Payment\Response\Decorator;
 
 use Gpupo\AdyenSdk\Payment\Response\Decorator\CreditCardDecorator;
 
-class CreditCardDecoratorTest extends abstractDecorator
+class CreditCardDecoratorTest extends AbstractDecorator
 {
     protected function factoryDecorator()
     {
@@ -29,6 +29,8 @@ class CreditCardDecoratorTest extends abstractDecorator
     public function testCustomFields()
     {
         $decorator = $this->factoryDecorator();
+        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\SuccessInterface', $decorator);
+        $this->assertEquals('8813760397300101', $decorator->getPspReference());
         $this->assertEquals('Authorised', $decorator->getResultCode());
         $this->assertEquals('96821', $decorator->getAuthCode());
     }
