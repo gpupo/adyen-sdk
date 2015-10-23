@@ -12,10 +12,9 @@
  * <http://www.g1mr.com/adyen-sdk/>.
  */
 
-namespace Gpupo\AdyenSdk\Payment\Response\Decorator;
+namespace Gpupo\AdyenSdk\Payment\Response;
 
-use Gpupo\AdyenSdk\Payment\Response\SuccessInterface;
-
-class CreditCardDecorator extends AbstractDecorator implements SuccessInterface
+interface SuccessInterface extends ResponseInterface
 {
+
 }

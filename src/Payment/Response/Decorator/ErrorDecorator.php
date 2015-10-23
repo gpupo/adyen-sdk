@@ -14,8 +14,8 @@
 
 namespace Gpupo\AdyenSdk\Payment\Response\Decorator;
 
-use Gpupo\AdyenSdk\Payment\Response\SuccessInterface;
+use Gpupo\AdyenSdk\Payment\Response\FailInterface;
 
-class CreditCardDecorator extends AbstractDecorator implements SuccessInterface
+class ErrorDecorator extends AbstractDecorator implements FailInterface
 {
 }
