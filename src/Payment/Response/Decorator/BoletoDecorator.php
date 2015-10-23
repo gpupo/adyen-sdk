@@ -14,7 +14,9 @@
 
 namespace Gpupo\AdyenSdk\Payment\Response\Decorator;
 
-class BoletoDecorator extends AbstractDecorator
+use Gpupo\AdyenSdk\Payment\Response\SuccessInterface;
+
+class BoletoDecorator extends AbstractDecorator implements SuccessInterface
 {
     protected function getBoletoFields()
     {

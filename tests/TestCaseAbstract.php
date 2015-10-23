@@ -46,9 +46,9 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
         return $this->factory;
     }
 
-    protected function factoryRequest()
+    protected function factoryRequest($route = 'request')
     {
-        return $this->getFactory()->createRequest($this->getData('request'));
+        return $this->getFactory()->createRequest($this->getData($route));
     }
 
     protected function factoryOrder()

@@ -1,0 +1,6 @@
+{
+  "status": 422,
+  "errorCode": 171,
+  "message": "Unable to parse Generation Date",
+  "errorType": "validation"
+}

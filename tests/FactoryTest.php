@@ -30,6 +30,7 @@ class FactoryTest extends FactoryTestAbstract
     {
         return [
             [$this->namespace . 'Payment\Request\Order\Order', 'order', null],
+            [$this->namespace . 'Payment\Request\Request', 'request', null],
         ];
     }
 

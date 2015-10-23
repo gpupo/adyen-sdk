@@ -14,6 +14,14 @@
 
 namespace Gpupo\AdyenSdk\Payment\Response\Decorator;
 
-class ProblematicDecorator extends AbstractDecorator
+class ProblematicDecorator extends ErrorDecorator
 {
+    public function getSchema()
+    {
+        $list = parent::getSchema();
+        return array_merge($list,[
+            'refusalReason' => 'string',
+            'errorCode'     => 'string',
+        ]);
+    }
 }
