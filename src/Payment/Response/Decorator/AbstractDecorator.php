@@ -23,9 +23,10 @@ abstract class AbstractDecorator extends EntityAbstract implements EntityInterfa
     {
         return [
             'code'              => 'number',
+            'status'            => 'number',
             'pspReference'      => 'string',
             'resultCode'        => 'string',
-            'authCode'          => 'string',            
+            'authCode'          => 'string',
             'additionaldata'    => 'array',
         ];
     }

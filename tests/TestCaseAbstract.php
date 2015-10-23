@@ -68,4 +68,15 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
 
         return $this->getResourceJson($dict[$route]);
     }
+
+    protected function getRequestManager($fixture = null, $statusCode = 200)
+    {
+        $manager = $this->getFactory()->factoryManager('request');
+
+        if (!empty($fixture)) {
+            $manager->setDryRun($this->factoryResponseFromFixture('fixtures/payment/response/' . $fixture, $statusCode));
+        }
+
+        return $manager;
+    }
 }
