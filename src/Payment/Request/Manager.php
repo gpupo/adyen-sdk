@@ -41,18 +41,63 @@ class Manager extends ManagerAbstract implements OptionsInterface
 
     protected $maps = [
         'submit'    => ['POST', '/authorise'],
+        'capture'   => ['POST', '/capture'],
+        'refund'    => ['POST', '/refund'],
+        'cancel'    => ['POST', '/cancel'],
     ];
 
-    public function submit(Request $request)
+    protected function preExecute(Request $request)
     {
         $request->setMerchantAccount($this->getOptions()->get('merchant_account'));
 
+        return $request;
+    }
+
+    protected function call(Request $request, $route)
+    {
+        $response = $this->execute($this->factoryMap($route, $request->toJson()));
+
+        return $this->processExecute($request, $response);
+    }
+
+    public function blow(Request $request, $route)
+    {
+        $this->preExecute($request);
+
         try {
-            $response =  $this->execute($this->factoryMap('submit'), $request->toJson());
-            return $this->processExecute($request, $response);
+            return $this->callExecute($request, $route);
         } catch (\Exception $exception) {
             return new ErrorDecorator($exception);
         }
+    }
+
+    public function submit(Request $request)
+    {
+        return $this->blow($request, 'submit');
+    }
+
+    /**
+     * @todo Implement
+     */
+    public function capture(Request $request)
+    {
+        return $this->blow($request, 'capture');
+    }
+
+    /**
+     * @todo Implement
+     */
+    public function refund(Request $request)
+    {
+        return $this->blow($request, 'refund');
+    }
+
+    /**
+     * @todo Implement
+     */
+    public function cancel(Request $request)
+    {
+        return $this->blow($request, 'cancel');
     }
 
     protected function processExecute(Request $request, Response $response)
