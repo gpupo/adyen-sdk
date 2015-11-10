@@ -87,6 +87,24 @@ $response->getData(); // Parâmetro usado para compor a url para o boleto
 
 ```
 
+#### Captura de uma transação com cartão de crédito
+
+``` PHP
+//...
+$request = $adyenSdk->createRequest($data);
+$response = $manager->capture($request);
+
+```
+
+#### Cancelamento de uma transação
+
+``` PHP
+//...
+$request = $adyenSdk->createRequest($data);
+$response = $manager->cancel($request);
+
+```
+
 #### Informações contidas em cada Resposta
 
 Valores possíveis para ``$response->getResultCode()``:
@@ -356,4 +374,3 @@ phpunit --testdox | grep -vi php |  sed "s/.*\[*]/-/" | sed 's/.*Gpupo.*/&\'$'\n
 
 - Custom fields
 - Generic fields
-
