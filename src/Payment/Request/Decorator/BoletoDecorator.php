@@ -25,7 +25,7 @@ class BoletoDecorator extends AbstractDecorator
             'shopperName'           => $this->getOrder()->getShopper()->getArrayName(),
             'shopperStatement'      => 'Não aceitar após o vencimento. Não aceitar o pagamento com cheque',
             'selectedBrand'         => 'boletobancario_santander',
-            'deliveryDate'          => '2015-10-22T23:00:00.000Z',
+            'deliveryDate'          => $this->getOrder()->getDeliveryDate(),
         ];
     }
 }
