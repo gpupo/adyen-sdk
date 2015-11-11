@@ -55,17 +55,17 @@ class Manager extends ManagerAbstract implements OptionsInterface
 
     protected function call(Request $request, $route)
     {
-        $response = $this->execute($this->factoryMap($route, $request->toJson()));
+        $response = $this->execute($this->factoryMap($route), $request->toJson());
 
         return $this->processExecute($request, $response);
     }
 
     public function blow(Request $request, $route)
     {
-        $this->preExecute($request);
+        $request = $this->preExecute($request);
 
         try {
-            return $this->callExecute($request, $route);
+            return $this->call($request, $route);
         } catch (\Exception $exception) {
             return new ErrorDecorator($exception);
         }
