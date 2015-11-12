@@ -16,5 +16,4 @@ namespace Gpupo\AdyenSdk\Payment\Response;
 
 interface SuccessInterface extends ResponseInterface
 {
-
 }

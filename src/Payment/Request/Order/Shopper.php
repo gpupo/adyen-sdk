@@ -18,7 +18,6 @@ use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 
 /**
- *
  * @method string getFirstName()    Acesso a firstName
  * @method setFirstName(string $firstName)    Define firstName
  * @method string getLastName()    Acesso a lastName
@@ -28,7 +27,6 @@ use Gpupo\CommonSdk\Entity\EntityInterface;
  * @method string getEmail()    Acesso a email
  * @method setEmail(string $email)    Define email
  * @method setSocialSecurityNumber(string $socialSecurityNumber)    Define socialSecurityNumber
- *
  */
 class Shopper extends EntityAbstract implements EntityInterface
 {
@@ -58,6 +56,6 @@ class Shopper extends EntityAbstract implements EntityInterface
 
     public function getSocialSecurityNumber()
     {
-        return str_pad($this->get('socialSecurityNumber'), 11, "0", STR_PAD_LEFT);
+        return str_pad($this->get('socialSecurityNumber'), 11, '0', STR_PAD_LEFT);
     }
 }

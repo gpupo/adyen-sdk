@@ -33,5 +33,4 @@ class FactoryTest extends FactoryTestAbstract
             [$this->namespace . 'Payment\Request\Request', 'request', null],
         ];
     }
-
 }
