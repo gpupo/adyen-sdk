@@ -81,6 +81,8 @@ class Manager extends ManagerAbstract implements OptionsInterface
      */
     public function capture(Request $request)
     {
+        $request->setType('capture');
+
         return $this->blow($request, 'capture');
     }
 

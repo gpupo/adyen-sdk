@@ -35,6 +35,7 @@ class Request extends EntityAbstract implements EntityInterface
         $dict = [
             'credit-cart' => 'CreditCardDecorator',
             'cc'          => 'CreditCardDecorator',
+            'capture'     => 'CaptureDecorator',
             'boleto'      => 'BoletoDecorator',
         ];
 
