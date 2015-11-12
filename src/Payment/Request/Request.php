@@ -54,7 +54,7 @@ class Request extends EntityAbstract implements EntityInterface
             . 'Payment\Request\Decorator\\' . $this->getDecoratorName();
 
         if (!class_exists($className)) {
-            throw new \InvalidArgumentException('Request type [' . $type . '] not supported!');
+            throw new \InvalidArgumentException('Request type [' . $className . '] not supported!');
         }
 
         return $className;
