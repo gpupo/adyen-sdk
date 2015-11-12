@@ -34,5 +34,4 @@ class BoletoDecoratorTest extends AbstractDecorator
         $this->assertEquals('2015-10-19', $decorator->getExpirationDate());
         $this->assertEquals('Received', $decorator->getResultCode());
     }
-
 }

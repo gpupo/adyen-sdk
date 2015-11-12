@@ -33,8 +33,7 @@ class ProblematicDecoratorTest extends AbstractDecorator
         $this->assertEquals(422, $decorator->getCode());
         $this->assertEquals(422, $decorator->getStatus());
         $this->assertEquals(171, $decorator->getErrorCode());
-        $this->assertEquals("validation", $decorator->getErrorType());
+        $this->assertEquals('validation', $decorator->getErrorType());
         $this->assertEquals('Unable to parse Generation Date', $decorator->getMessage());
     }
-
 }

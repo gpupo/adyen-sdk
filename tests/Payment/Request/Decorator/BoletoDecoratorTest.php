@@ -28,9 +28,9 @@ class BoletoDecoratorTest extends TestCaseAbstract
         $list = ['merchantAccount','reference','amount','shopperEmail',
             'shopperIP','merchantOrderReference','shopperName',
             'socialSecurityNumber','billingAddress','shopperStatement',
-            'selectedBrand','deliveryDate'];
+            'selectedBrand','deliveryDate', ];
 
-        foreach($list as $key) {
+        foreach ($list as $key) {
             $this->assertArrayHasKey($key, $array);
         }
     }

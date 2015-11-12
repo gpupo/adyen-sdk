@@ -25,7 +25,7 @@ abstract class AbstractDecorator extends CollectionAbstract
 
     protected function factoryReference()
     {
-        return 'payment-' . $this->name .  $this->getOrder()->getId();
+        return 'payment-' . $this->name . $this->getOrder()->getId();
     }
 
     public function setRequest(Request $request)

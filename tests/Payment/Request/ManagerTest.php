@@ -72,7 +72,6 @@ class ManagerTest extends TestCaseAbstract
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\ProblematicDecorator', $response);
     }
 
-
     /**
      * @testdox Executa a requisição de uma captura
      * @test
@@ -86,6 +85,4 @@ class ManagerTest extends TestCaseAbstract
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\SuccessInterface', $response);
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\CaptureDecorator', $response);
     }
-
-
 }

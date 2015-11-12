@@ -21,7 +21,6 @@ abstract class AbstractDecorator extends TestCaseAbstract
     public function testGenericFields()
     {
         $decorator = $this->factoryDecorator();
-        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\ResponseInterface', $decorator);        
+        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\ResponseInterface', $decorator);
     }
-
 }

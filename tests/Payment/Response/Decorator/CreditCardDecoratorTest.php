@@ -34,5 +34,4 @@ class CreditCardDecoratorTest extends AbstractDecorator
         $this->assertEquals('Authorised', $decorator->getResultCode());
         $this->assertEquals('96821', $decorator->getAuthCode());
     }
-
 }

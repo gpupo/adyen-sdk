@@ -27,8 +27,8 @@ class CreditCardDecoratorTest extends TestCaseAbstract
 
         $list = ['merchantAccount','reference','amount','shopperEmail',
             'shopperIP','merchantOrderReference','shopperReference',
-            'installments','additionalData'];
-        foreach($list as $key) {
+            'installments','additionalData', ];
+        foreach ($list as $key) {
             $this->assertArrayHasKey($key, $array);
         }
     }
