@@ -27,6 +27,7 @@ abstract class AbstractDecorator extends EntityAbstract implements EntityInterfa
             'pspReference'      => 'string',
             'resultCode'        => 'string',
             'authCode'          => 'string',
+            'response'          => 'string',
             'additionaldata'    => 'array',
         ];
     }

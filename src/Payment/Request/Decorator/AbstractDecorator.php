@@ -21,6 +21,13 @@ abstract class AbstractDecorator extends CollectionAbstract
 {
     private $request;
 
+    protected $name = 'generic';
+
+    protected function factoryReference()
+    {
+        return 'payment-' . $this->name .  $this->getOrder()->getId();
+    }
+
     public function setRequest(Request $request)
     {
         $this->request = $request;
@@ -51,7 +58,7 @@ abstract class AbstractDecorator extends CollectionAbstract
 
         return [
             'merchantAccount'           => $this->getRequest()->getMerchantAccount(),
-            'reference'                 => 'payment-' . $this->getOrder()->getId(),
+            'reference'                 => $this->factoryReference(),
             'amount'                    => ['currency'  => 'BRL','value' => $value],
             'shopperEmail'              => $this->getOrder()->getShopper()->getEmail(),
             'shopperIP'                 => $this->getOrder()->getShopper()->getIp(),

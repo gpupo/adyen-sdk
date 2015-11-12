@@ -62,10 +62,16 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
             'request'               => 'fixtures/payment/request/request.json',
             'boleto'                => 'fixtures/payment/request/request-boleto.json',
             'order'                 => 'fixtures/payment/request/order.json',
+            'capture'               => 'fixtures/payment/request/request.json',
             'response.boleto'       => 'fixtures/payment/response/boleto.json',
             'response.cc'           => 'fixtures/payment/response/cc.json',
+            'response.capture'      => 'fixtures/payment/response/capture.json',
             'response.problematic'  => 'fixtures/payment/response/problematic.json',
         ];
+
+        if (!array_key_exists($route, $dict)) {
+            throw new \Exception('Mapeamento inexistente');
+        }
 
         return $this->getResourceJson($dict[$route]);
     }
