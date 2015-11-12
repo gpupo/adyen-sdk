@@ -72,4 +72,20 @@ class ManagerTest extends TestCaseAbstract
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\ProblematicDecorator', $response);
     }
 
+
+    /**
+     * @testdox Executa a requisição de uma captura
+     * @test
+     */
+    public function requestCapture()
+    {
+        $manager = $this->getRequestManager('capture.json');
+        $request = $this->factoryRequest();
+        $response = $manager->capture($request);
+        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\AbstractDecorator', $response);
+        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\SuccessInterface', $response);
+        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\CaptureDecorator', $response);
+    }
+
+
 }
