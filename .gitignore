@@ -11,3 +11,4 @@ doc/*
 Resources/Documentation/*
 app.json
 Resources/public_key.txt
+composer.lock
