@@ -30,7 +30,7 @@ class CaptureDecoratorTest extends AbstractDecorator
     {
         $decorator = $this->factoryDecorator();
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\SuccessInterface', $decorator);
-        $this->assertEquals('[capture-received]', $decorator->getResponse());
-        $this->assertEquals('8413547924770610', $decorator->getPspReference());
+        $this->assertSame('[capture-received]', $decorator->getResponse());
+        $this->assertSame('8413547924770610', $decorator->getPspReference());
     }
 }

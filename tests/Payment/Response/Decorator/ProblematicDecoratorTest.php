@@ -30,10 +30,10 @@ class ProblematicDecoratorTest extends AbstractDecorator
     {
         $decorator = $this->factoryDecorator();
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\FailInterface', $decorator);
-        $this->assertEquals(422, $decorator->getCode());
-        $this->assertEquals(422, $decorator->getStatus());
-        $this->assertEquals(171, $decorator->getErrorCode());
-        $this->assertEquals('validation', $decorator->getErrorType());
-        $this->assertEquals('Unable to parse Generation Date', $decorator->getMessage());
+        $this->assertSame(422, $decorator->getCode());
+        $this->assertSame(422, $decorator->getStatus());
+        $this->assertSame(171, $decorator->getErrorCode());
+        $this->assertSame('validation', $decorator->getErrorType());
+        $this->assertSame('Unable to parse Generation Date', $decorator->getMessage());
     }
 }

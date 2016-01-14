@@ -30,9 +30,9 @@ class RequestTest extends EntityTestCaseAbstract
     public function dataProviderObject()
     {
         $expected = [
-            'order'             => 'object',
-            'type'              => 'string',
-            'encryptedData'     => 'string',
+            'order'         => 'object',
+            'type'          => 'string',
+            'encryptedData' => 'string',
         ];
 
         return $this->dataProviderEntitySchema(self::QUALIFIED, $expected);

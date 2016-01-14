@@ -25,9 +25,9 @@ class CreditCardDecoratorTest extends TestCaseAbstract
         $decorator->setRequest($this->factoryRequest());
         $array = json_decode($decorator->toJson(), true);
 
-        $list = ['merchantAccount','reference','amount','shopperEmail',
-            'shopperIP','merchantOrderReference','shopperReference',
-            'installments','additionalData', ];
+        $list = ['merchantAccount', 'reference', 'amount', 'shopperEmail',
+            'shopperIP', 'merchantOrderReference', 'shopperReference',
+            'installments', 'additionalData', ];
         foreach ($list as $key) {
             $this->assertArrayHasKey($key, $array);
         }

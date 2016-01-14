@@ -35,11 +35,11 @@ class Factory extends FactoryAbstract
     {
         return [
             'order' => [
-                'class'     => $namespace . 'Payment\Request\Order\Order',
+                'class' => $namespace . 'Payment\Request\Order\Order',
             ],
             'request' => [
-                'class'     => $namespace . 'Payment\Request\Request',
-                'manager'   => $namespace . 'Payment\Request\Manager',
+                'class'   => $namespace . 'Payment\Request\Request',
+                'manager' => $namespace . 'Payment\Request\Manager',
             ],
         ];
     }

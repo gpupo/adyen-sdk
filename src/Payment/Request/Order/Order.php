@@ -28,7 +28,7 @@ use Gpupo\CommonSdk\Entity\EntityInterface;
  * @method setBillingAddress(Gpupo\AdyenSdk\Payment\Request\Order\BillingAddress $billingAddress)    Define billingAddress
  * @method Gpupo\AdyenSdk\Payment\Request\Order\ShippingAddress getShippingAddress()    Acesso a shippingAddress
  * @method setShippingAddress(Gpupo\AdyenSdk\Payment\Request\Order\ShippingAddress $shippingAddress)    Define shippingAddress
- * @method integer getInstallments()    Acesso a installments
+ * @method int getInstallments()    Acesso a installments
  * @method setInstallments(integer $installments)    Define installments
  * @method string getDeliveryDate()    Acesso a deliveryDate
  * @method setDeliveryDate(string $deliveryDate)    Define deliveryDate
@@ -40,14 +40,14 @@ class Order extends EntityAbstract implements EntityInterface
     public function getSchema()
     {
         return [
-            'id'                => 'string',
-            'shopper'           => 'object',
-            'amount'            => 'number',
-            'billingAddress'    => 'object',
-            'shippingAddress'   => 'object',
-            'installments'      => 'integer',
-            'deliveryDate'      => 'string',
-            'createdAt'         => 'string',
+            'id'              => 'string',
+            'shopper'         => 'object',
+            'amount'          => 'number',
+            'billingAddress'  => 'object',
+            'shippingAddress' => 'object',
+            'installments'    => 'integer',
+            'deliveryDate'    => 'string',
+            'createdAt'       => 'string',
         ];
     }
 

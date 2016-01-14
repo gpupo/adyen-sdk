@@ -19,7 +19,6 @@ use Gpupo\CommonSdk\Entity\EntityAbstract;
 use Gpupo\CommonSdk\Entity\EntityInterface;
 
 /**
- *
  * @method Gpupo\AdyenSdk\Payment\Request\Order\Order getOrder()    Acesso a order
  * @method setOrder(Gpupo\AdyenSdk\Payment\Request\Order\Order $order)    Define order
  * @method string getType()    Acesso a type
@@ -28,17 +27,16 @@ use Gpupo\CommonSdk\Entity\EntityInterface;
  * @method setEncryptedData(string $encryptedData)    Define encryptedData
  * @method string getMerchantAccount()    Acesso a merchantAccount
  * @method setMerchantAccount(string $merchantAccount)    Define merchantAccount
- *
  */
 class Request extends EntityAbstract implements EntityInterface
 {
     public function getSchema()
     {
         return [
-            'order'             => 'object',
-            'type'              => 'string',
-            'encryptedData'     => 'string',
-            'merchantAccount'   => 'string',
+            'order'           => 'object',
+            'type'            => 'string',
+            'encryptedData'   => 'string',
+            'merchantAccount' => 'string',
         ];
     }
 
@@ -53,7 +51,7 @@ class Request extends EntityAbstract implements EntityInterface
 
         $type = strtolower($this->getType());
 
-        if (!array_key_exists($type, $dict)) {
+        if ( ! array_key_exists($type, $dict)) {
             throw new \InvalidArgumentException('Request type [' . $type . ']not exist!');
         }
 
@@ -65,7 +63,7 @@ class Request extends EntityAbstract implements EntityInterface
         $className = Factory::PACKAGENAME
             . 'Payment\Request\Decorator\\' . $this->getDecoratorName();
 
-        if (!class_exists($className)) {
+        if ( ! class_exists($className)) {
             throw new \InvalidArgumentException('Request type [' . $className . '] not supported!');
         }
 

@@ -25,10 +25,10 @@ class BoletoDecoratorTest extends TestCaseAbstract
         $decorator->setRequest($this->factoryRequest());
         $array = json_decode($decorator->toJson(), true);
 
-        $list = ['merchantAccount','reference','amount','shopperEmail',
-            'shopperIP','merchantOrderReference','shopperName',
-            'socialSecurityNumber','billingAddress','shopperStatement',
-            'selectedBrand','deliveryDate', ];
+        $list = ['merchantAccount', 'reference', 'amount', 'shopperEmail',
+            'shopperIP', 'merchantOrderReference', 'shopperName',
+            'socialSecurityNumber', 'billingAddress', 'shopperStatement',
+            'selectedBrand', 'deliveryDate', ];
 
         foreach ($list as $key) {
             $this->assertArrayHasKey($key, $array);

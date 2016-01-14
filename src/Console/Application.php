@@ -21,23 +21,23 @@ class Application extends AbstractApplication
 {
     protected $commonParameters = [
         [
-            'key'   => 'client_user',
+            'key' => 'client_user',
         ],
         [
-            'key'   => 'client_password',
+            'key' => 'client_password',
         ],
         [
-            'key'   => 'merchant_account',
+            'key' => 'merchant_account',
         ],
         [
-            'key'       => 'env',
-            'options'   => ['test', 'live'],
-            'default'   => 'test',
-            'name'      => 'Version',
+            'key'     => 'env',
+            'options' => ['test', 'live'],
+            'default' => 'test',
+            'name'    => 'Version',
         ],
         [
-            'key'       => 'registerPath',
-            'default'   => false,
+            'key'     => 'registerPath',
+            'default' => false,
         ],
     ];
 

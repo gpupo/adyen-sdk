@@ -19,11 +19,11 @@ class CreditCardDecorator extends AbstractDecorator
     protected function getCustomFields()
     {
         return [
-            'shopperEmail'      => $this->getOrder()->getShopper()->getEmail(),
-            'shopperIP'         => $this->getOrder()->getShopper()->getIp(),
-            'shopperReference'  => $this->getOrder()->getShopper()->getFullName(),
-            'installments'      => ['value' => $this->getOrder()->getInstallments()],
-            'additionalData'    => [
+            'shopperEmail'     => $this->getOrder()->getShopper()->getEmail(),
+            'shopperIP'        => $this->getOrder()->getShopper()->getIp(),
+            'shopperReference' => $this->getOrder()->getShopper()->getFullName(),
+            'installments'     => ['value' => $this->getOrder()->getInstallments()],
+            'additionalData'   => [
                 'card.encrypted.json' => $this->getRequest()->getEncryptedData(),
             ],
         ];
