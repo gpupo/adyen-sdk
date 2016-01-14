@@ -33,11 +33,11 @@ class Shopper extends EntityAbstract implements EntityInterface
     public function getSchema()
     {
         return [
-            'firstName'             => 'string',
-            'lastName'              => 'string',
-            'ip'                    => 'string',
-            'email'                 => 'string',
-            'socialSecurityNumber'  => 'string',
+            'firstName'            => 'string',
+            'lastName'             => 'string',
+            'ip'                   => 'string',
+            'email'                => 'string',
+            'socialSecurityNumber' => 'string',
         ];
     }
 

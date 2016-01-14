@@ -35,7 +35,7 @@ abstract class AbstractDecorator extends CollectionAbstract
 
     protected function getRequest()
     {
-        if (!$this->request instanceof Request) {
+        if ( ! $this->request instanceof Request) {
             throw new \InvalidArgumentException('Request ausente!');
         }
 
@@ -57,12 +57,12 @@ abstract class AbstractDecorator extends CollectionAbstract
         $value = str_replace(['.', ','], '', strval($this->getOrder()->getAmount()));
 
         return [
-            'merchantAccount'           => $this->getRequest()->getMerchantAccount(),
-            'reference'                 => $this->factoryReference(),
-            'amount'                    => ['currency'  => 'BRL','value' => $value],
-            'shopperEmail'              => $this->getOrder()->getShopper()->getEmail(),
-            'shopperIP'                 => $this->getOrder()->getShopper()->getIp(),
-            'merchantOrderReference'    => 'payment-' . $this->getOrder()->getId(),
+            'merchantAccount'        => $this->getRequest()->getMerchantAccount(),
+            'reference'              => $this->factoryReference(),
+            'amount'                 => ['currency' => 'BRL', 'value' => $value],
+            'shopperEmail'           => $this->getOrder()->getShopper()->getEmail(),
+            'shopperIP'              => $this->getOrder()->getShopper()->getIp(),
+            'merchantOrderReference' => 'payment-' . $this->getOrder()->getId(),
         ];
     }
 

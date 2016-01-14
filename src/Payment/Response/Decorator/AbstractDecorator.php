@@ -22,13 +22,13 @@ abstract class AbstractDecorator extends EntityAbstract implements EntityInterfa
     public function getSchema()
     {
         return [
-            'code'              => 'number',
-            'status'            => 'number',
-            'pspReference'      => 'string',
-            'resultCode'        => 'string',
-            'authCode'          => 'string',
-            'response'          => 'string',
-            'additionaldata'    => 'array',
+            'code'           => 'number',
+            'status'         => 'number',
+            'pspReference'   => 'string',
+            'resultCode'     => 'string',
+            'authCode'       => 'string',
+            'response'       => 'string',
+            'additionaldata' => 'array',
         ];
     }
 }

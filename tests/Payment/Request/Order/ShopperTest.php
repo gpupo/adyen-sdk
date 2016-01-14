@@ -119,7 +119,7 @@ class ShopperTest extends EntityTestCaseAbstract
      */
     public function getterSocialSecurityNumber(EntityInterface $object)
     {
-        $this->assertEquals(11, strlen($object->getSocialSecurityNumber()));
+        $this->assertSame(11, strlen($object->getSocialSecurityNumber()));
     }
 
     /**
@@ -130,6 +130,6 @@ class ShopperTest extends EntityTestCaseAbstract
     public function setterSocialSecurityNumber(EntityInterface $object)
     {
         $object->setSocialSecurityNumber('12345678911');
-        $this->assertEquals('12345678911', $object->getSocialSecurityNumber());
+        $this->assertSame('12345678911', $object->getSocialSecurityNumber());
     }
 }

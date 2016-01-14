@@ -80,7 +80,7 @@ class OrderTest extends EntityTestCaseAbstract
     public function getterAmount(EntityInterface $object)
     {
         $object->setAmount(129.01);
-        $this->assertEquals(129.01, $object->getAmount());
+        $this->assertSame(129.01, $object->getAmount());
     }
 
     /**

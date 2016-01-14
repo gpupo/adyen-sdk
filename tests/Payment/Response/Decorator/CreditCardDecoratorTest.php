@@ -30,8 +30,8 @@ class CreditCardDecoratorTest extends AbstractDecorator
     {
         $decorator = $this->factoryDecorator();
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\SuccessInterface', $decorator);
-        $this->assertEquals('8813760397300101', $decorator->getPspReference());
-        $this->assertEquals('Authorised', $decorator->getResultCode());
-        $this->assertEquals('96821', $decorator->getAuthCode());
+        $this->assertSame('8813760397300101', $decorator->getPspReference());
+        $this->assertSame('Authorised', $decorator->getResultCode());
+        $this->assertSame('96821', $decorator->getAuthCode());
     }
 }

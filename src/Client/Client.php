@@ -22,15 +22,15 @@ class Client extends ClientAbstract implements ClientInterface
     public function getDefaultOptions()
     {
         return [
-            'client_user'      => false,
-            'client_password'  => false,
-            'base_url'         => '{PROTOCOL}://pal-{VERSION}.adyen.com/pal/servlet/Payment/v12',
-            'protocol'         => 'https',
-            'version'          => 'test',
-            'verbose'          => false,
-            'sslVersion'       => 'SecureTransport',
-            'cacheTTL'         => 3600,
-            'sslVerifyPeer'    => true,
+            'client_user'     => false,
+            'client_password' => false,
+            'base_url'        => '{PROTOCOL}://pal-{VERSION}.adyen.com/pal/servlet/Payment/v12',
+            'protocol'        => 'https',
+            'version'         => 'test',
+            'verbose'         => false,
+            'sslVersion'      => 'SecureTransport',
+            'cacheTTL'        => 3600,
+            'sslVerifyPeer'   => true,
         ];
     }
 

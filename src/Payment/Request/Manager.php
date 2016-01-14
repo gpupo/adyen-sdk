@@ -40,10 +40,10 @@ class Manager extends ManagerAbstract implements OptionsInterface
     protected $entity = 'Request';
 
     protected $maps = [
-        'submit'    => ['POST', '/authorise'],
-        'capture'   => ['POST', '/capture'],
-        'refund'    => ['POST', '/refund'],
-        'cancel'    => ['POST', '/cancel'],
+        'submit'  => ['POST', '/authorise'],
+        'capture' => ['POST', '/capture'],
+        'refund'  => ['POST', '/refund'],
+        'cancel'  => ['POST', '/cancel'],
     ];
 
     protected function preExecute(Request $request)
@@ -126,7 +126,7 @@ class Manager extends ManagerAbstract implements OptionsInterface
     {
         $className = $this->getFullyQualifiedDecoratorName($request->getDecoratorName());
 
-        if (!class_exists($className)) {
+        if ( ! class_exists($className)) {
             throw new \InvalidArgumentException('Response type [' . $type . '] not supported!');
         }
 
