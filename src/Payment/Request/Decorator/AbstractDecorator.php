@@ -54,12 +54,10 @@ abstract class AbstractDecorator extends CollectionAbstract
 
     protected function getGenericFields()
     {
-        $value = str_replace(['.', ','], '', strval($this->getOrder()->getAmount()));
-
         return [
             'merchantAccount'        => $this->getRequest()->getMerchantAccount(),
             'reference'              => $this->factoryReference(),
-            'amount'                 => ['currency' => 'BRL', 'value' => $value],
+            'amount'                 => ['currency' => 'BRL', 'value' => $this->getOrder()->getAmountInt()],
             'shopperEmail'           => $this->getOrder()->getShopper()->getEmail(),
             'shopperIP'              => $this->getOrder()->getShopper()->getIp(),
             'merchantOrderReference' => 'payment-' . $this->getOrder()->getId(),

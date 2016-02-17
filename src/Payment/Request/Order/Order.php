@@ -55,4 +55,9 @@ class Order extends EntityAbstract implements EntityInterface
     {
         return number_format($this->get('amount'), 2);
     }
+
+    public function getAmountInt()
+    {
+        return number_format($this->get('amount'), 2, '','');
+    }
 }

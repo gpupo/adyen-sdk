@@ -16,9 +16,15 @@ namespace Gpupo\AdyenSdk\Payment\Request\Decorator;
 
 class CaptureDecorator extends AbstractDecorator
 {
-    protected function getCustomFields()
+    public function toArray()
     {
         return [
+            'merchantAccount'        => $this->getRequest()->getMerchantAccount(),
+            'modificationAmount'     => [
+                'value' => $this->getOrder()->getAmountInt(),
+                'currency' => 'BRL',
+            ],
+            'originalReference' => $this->getOrder()->get('pspReference'),
         ];
     }
 }
