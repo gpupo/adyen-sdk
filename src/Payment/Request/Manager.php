@@ -40,10 +40,9 @@ class Manager extends ManagerAbstract implements OptionsInterface
     protected $entity = 'Request';
 
     protected $maps = [
-        'submit'  => ['POST', '/authorise'],
-        'capture' => ['POST', '/capture'],
-        'refund'  => ['POST', '/refund'],
-        'cancel'  => ['POST', '/cancel'],
+        'submit'            => ['POST', '/authorise'],
+        'capture'           => ['POST', '/capture'],
+        'cancelOrRefund'    => ['POST', '/cancelOrRefund'],
     ];
 
     protected function preExecute(Request $request)
@@ -63,7 +62,6 @@ class Manager extends ManagerAbstract implements OptionsInterface
     public function blow(Request $request, $route)
     {
         $request = $this->preExecute($request);
-
         try {
             return $this->call($request, $route);
         } catch (\Exception $exception) {
@@ -76,9 +74,6 @@ class Manager extends ManagerAbstract implements OptionsInterface
         return $this->blow($request, 'submit');
     }
 
-    /**
-     * @todo Implement
-     */
     public function capture(Request $request)
     {
         $request->setType('capture');
@@ -86,20 +81,11 @@ class Manager extends ManagerAbstract implements OptionsInterface
         return $this->blow($request, 'capture');
     }
 
-    /**
-     * @todo Implement
-     */
-    public function refund(Request $request)
+    public function cancelOrRefund(Request $request)
     {
-        return $this->blow($request, 'refund');
-    }
+        $request->setType('cancelOrRefund');
 
-    /**
-     * @todo Implement
-     */
-    public function cancel(Request $request)
-    {
-        return $this->blow($request, 'cancel');
+        return $this->blow($request, 'cancelOrRefund');
     }
 
     protected function processExecute(Request $request, Response $response)
@@ -127,7 +113,7 @@ class Manager extends ManagerAbstract implements OptionsInterface
         $className = $this->getFullyQualifiedDecoratorName($request->getDecoratorName());
 
         if ( ! class_exists($className)) {
-            throw new \InvalidArgumentException('Response type [' . $type . '] not supported!');
+            throw new \InvalidArgumentException('Response type [' . $request->getType() . '] not supported!');
         }
 
         return $className;

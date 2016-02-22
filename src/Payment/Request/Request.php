@@ -43,19 +43,18 @@ class Request extends EntityAbstract implements EntityInterface
     public function getDecoratorName()
     {
         $dict = [
-            'credit-cart' => 'CreditCardDecorator',
-            'cc'          => 'CreditCardDecorator',
-            'capture'     => 'CaptureDecorator',
-            'boleto'      => 'BoletoDecorator',
+            'credit-cart'       => 'CreditCardDecorator',
+            'cc'                => 'CreditCardDecorator',
+            'capture'           => 'CaptureDecorator',
+            'boleto'            => 'BoletoDecorator',
+            'cancelOrRefund'    => 'CancelOrRefundDecorator',
         ];
 
-        $type = strtolower($this->getType());
-
-        if ( ! array_key_exists($type, $dict)) {
-            throw new \InvalidArgumentException('Request type [' . $type . ']not exist!');
+        if ( ! array_key_exists($this->getType(), $dict)) {
+            throw new \InvalidArgumentException('Request type [' . $this->getType() . ']not exist!');
         }
 
-        return $dict[$type];
+        return $dict[$this->getType()];
     }
 
     protected function resolveDecorator()
