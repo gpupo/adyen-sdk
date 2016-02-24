@@ -47,12 +47,4 @@ class Client extends ClientAbstract implements ClientInterface
             . base64_encode($this->getOptions()->get('client_user') . ':'
             . $this->getOptions()->get('client_password'));
     }
-
-    protected function renderHeader()
-    {
-        return array_merge(
-            parent::renderHeader(),
-            ["pragma: process-retry"]
-        );
-    }
 }
