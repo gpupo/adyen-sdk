@@ -24,9 +24,9 @@ class Client extends ClientAbstract implements ClientInterface
         return [
             'client_user'     => false,
             'client_password' => false,
-            'base_url'        => '{PROTOCOL}://pal-{VERSION}.adyen.com/pal/servlet/Payment/v12',
+            'base_url'        => '{PROTOCOL}://{VERSION}/pal/servlet/Payment/v12',
             'protocol'        => 'https',
-            'version'         => 'test',
+            'version'         => 'pal-test.adyen.com',
             'verbose'         => false,
             'sslVersion'      => 'SecureTransport',
             'cacheTTL'        => 3600,
