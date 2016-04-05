@@ -51,13 +51,18 @@ class Order extends EntityAbstract implements EntityInterface
         ];
     }
 
+    protected function amountFormat($decimal_separator)
+    {
+        return number_format($this->get('amount'), 2, $decimal_separator, '');
+    }
+
     public function getAmount()
     {
-        return number_format($this->get('amount'), 2);
+        return $this->amountFormat('.');
     }
 
     public function getAmountInt()
     {
-        return number_format($this->get('amount'), 2, '','');
+        return $this->amountFormat('');
     }
 }

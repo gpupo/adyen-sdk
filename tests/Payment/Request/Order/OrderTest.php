@@ -79,8 +79,25 @@ class OrderTest extends EntityTestCaseAbstract
      */
     public function getterAmount(EntityInterface $object)
     {
-        $object->setAmount(129.01);
-        $this->assertSame(129.01, $object->getAmount());
+        foreach ([128, 44.5, 12085342.55, 129.01] as $num) {
+            $object->setAmount($num);
+            $out = $object->getAmount();
+            $this->assertEquals($num, $out);
+        }
+    }
+
+    /**
+     * @testdox Possui método ``getAmountInt()`` para acessar e definir Amount em formato "minor units"
+     * @dataProvider dataProviderObject
+     * @test
+     */
+    public function getterAmountInt(EntityInterface $object)
+    {
+        foreach ([128, 129.01, 88.1, 457883.99] as $num) {
+            $object->setAmount($num);
+            $out = $object->getAmountInt();
+            $this->assertEquals($num * 100, $out);
+        }
     }
 
     /**
