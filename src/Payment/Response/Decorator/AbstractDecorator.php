@@ -31,4 +31,14 @@ abstract class AbstractDecorator extends EntityAbstract implements EntityInterfa
             'additionaldata' => 'array',
         ];
     }
+
+    public function getCode()
+    {
+        return intval($this->get('code'));
+    }
+
+    public function getStatus()
+    {
+        return intval($this->get('status'));
+    }
 }
