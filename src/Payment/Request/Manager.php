@@ -42,6 +42,7 @@ class Manager extends ManagerAbstract implements OptionsInterface
     protected $maps = [
         'submit'            => ['POST', '/authorise'],
         'capture'           => ['POST', '/capture'],
+        'refund'            => ['POST', '/refund'],
         'cancelOrRefund'    => ['POST', '/cancelOrRefund'],
     ];
 
@@ -79,6 +80,14 @@ class Manager extends ManagerAbstract implements OptionsInterface
         $request->setType('capture');
 
         return $this->blow($request, 'capture');
+    }
+
+    public function refund(Request $request, $modificationValue)
+    {
+        $request->setType('refund');
+        $request->getOrder()->setModificationValue($modificationValue);
+
+        return $this->blow($request, 'refund');
     }
 
     public function cancelOrRefund(Request $request)
