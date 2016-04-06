@@ -96,12 +96,24 @@ $response = $manager->capture($request);
 
 ```
 
+#### Estorno parcial em uma transação
+
+``` PHP
+//...
+$request = $adyenSdk->createRequest($data);
+$response = $manager->refund($request, 10.99);
+
+```
+
+No exemplo acima é executado o estorno de R$10.99
+
+
 #### Cancelamento de uma transação
 
 ``` PHP
 //...
 $request = $adyenSdk->createRequest($data);
-$response = $manager->cancel($request);
+$response = $manager->cancelOrRefund($request);
 
 ```
 
@@ -297,6 +309,7 @@ A lista abaixo é gerada automaticamente a partir da saída da execução dos te
 <!--
 phpunit --testdox | grep -vi php |  sed "s/.*\[*]/-/" | sed 's/.*Gpupo.*/&\'$'\n/g' | sed 's/.*Gpupo.*/&\'$'\n/g' | sed 's/Gpupo\\Tests\\AdyenSdk\\/### /g' | sed '/./,/^$/!d' >> README.md
 -->
+
 ### Client\Client
 
 - Acesso ao client
@@ -321,6 +334,9 @@ phpunit --testdox | grep -vi php |  sed "s/.*\[*]/-/" | sed 's/.*Gpupo.*/&\'$'\n
 - Executa a requisição de um novo boleto e devolve objeto específico
 - Executa a autorização de um pagamento com cartão de crédito e devolve objeto específico
 - Em requisições mal sucedidas entrega objeto problemático
+- Executa a requisição de uma captura
+- Executa a requisição Refund()
+- Executa a requisição CancelOrRefund()
 
 ### Payment\Request\Order\Order
 
@@ -329,6 +345,7 @@ phpunit --testdox | grep -vi php |  sed "s/.*\[*]/-/" | sed 's/.*Gpupo.*/&\'$'\n
 - Possui método ``getShopper()`` para acessar Shopper
 - Possui método ``setShopper()`` que define Shopper
 - Possui método ``getAmount()`` e ``setAmount()`` para acessar e definir Amount
+- Possui método ``getAmountInt()`` para acessar e definir Amount em formato "minor units"
 - Possui método ``getBillingAddress()`` para acessar BillingAddress
 - Possui método ``setBillingAddress()`` que define BillingAddress
 - Possui método ``getShippingAddress()`` para acessar ShippingAddress
@@ -370,7 +387,22 @@ phpunit --testdox | grep -vi php |  sed "s/.*\[*]/-/" | sed 's/.*Gpupo.*/&\'$'\n
 - Custom fields
 - Generic fields
 
+### Payment\Response\Decorator\CaptureDecorator
+
+- Custom fields
+- Generic fields
+
 ### Payment\Response\Decorator\CreditCardDecorator
+
+- Custom fields
+- Generic fields
+
+### Payment\Response\Decorator\ProblematicDecorator
+
+- Custom fields
+- Generic fields
+
+### Payment\Response\Decorator\RefundDecorator
 
 - Custom fields
 - Generic fields
