@@ -66,6 +66,7 @@ abstract class TestCaseAbstract extends CommonSdkTestCaseAbstract
             'response.boleto'      => 'fixtures/payment/response/boleto.json',
             'response.cc'          => 'fixtures/payment/response/cc.json',
             'response.capture'     => 'fixtures/payment/response/capture.json',
+            'response.refund'      => 'fixtures/payment/response/refund.json',
             'response.problematic' => 'fixtures/payment/response/problematic.json',
         ];
 
