@@ -85,4 +85,32 @@ class ManagerTest extends TestCaseAbstract
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\SuccessInterface', $response);
         $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\CaptureDecorator', $response);
     }
+
+    /**
+     * @testdox Executa a requisição Refund()
+     * @test
+     */
+    public function requestRefund()
+    {
+        $manager = $this->getRequestManager('capture.json');
+        $request = $this->factoryRequest();
+        $response = $manager->refund($request, 10);
+        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\AbstractDecorator', $response);
+        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\SuccessInterface', $response);
+        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\RefundDecorator', $response);
+    }
+
+    /**
+     * @testdox Executa a requisição CancelOrRefund()
+     * @test
+     */
+    public function requestCancelOrRefund()
+    {
+        $manager = $this->getRequestManager('capture.json');
+        $request = $this->factoryRequest();
+        $response = $manager->cancelOrRefund($request);
+        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\AbstractDecorator', $response);
+        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\SuccessInterface', $response);
+        $this->assertInstanceOf('\Gpupo\AdyenSdk\Payment\Response\Decorator\CancelOrRefundDecorator', $response);
+    }
 }

@@ -47,6 +47,7 @@ class Request extends EntityAbstract implements EntityInterface
             'cc'                => 'CreditCardDecorator',
             'capture'           => 'CaptureDecorator',
             'boleto'            => 'BoletoDecorator',
+            'refund'            => 'refundDecorator',
             'cancelOrRefund'    => 'CancelOrRefundDecorator',
         ];
 

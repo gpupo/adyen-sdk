@@ -34,26 +34,28 @@ use Gpupo\CommonSdk\Entity\EntityInterface;
  * @method setDeliveryDate(string $deliveryDate)    Define deliveryDate
  * @method string getCreatedAt()    Acesso a createdAt
  * @method setCreatedAt(string $createdAt)    Define createdAt
+ * @method setModificationValue(float $amount)    Define o valor para modificação
  */
 class Order extends EntityAbstract implements EntityInterface
 {
     public function getSchema()
     {
         return [
-            'id'              => 'string',
-            'shopper'         => 'object',
-            'amount'          => 'number',
-            'billingAddress'  => 'object',
-            'shippingAddress' => 'object',
-            'installments'    => 'integer',
-            'deliveryDate'    => 'string',
-            'createdAt'       => 'string',
+            'id'                => 'string',
+            'shopper'           => 'object',
+            'amount'            => 'number',
+            'billingAddress'    => 'object',
+            'shippingAddress'   => 'object',
+            'installments'      => 'integer',
+            'deliveryDate'      => 'string',
+            'createdAt'         => 'string',
+            'modificationValue' => 'number',
         ];
     }
 
-    protected function amountFormat($decimal_separator)
+    protected function amountFormat($decimal_separator, $key = 'amount')
     {
-        return number_format($this->get('amount'), 2, $decimal_separator, '');
+        return number_format($this->get($key), 2, $decimal_separator, '');
     }
 
     public function getAmount()
@@ -64,5 +66,10 @@ class Order extends EntityAbstract implements EntityInterface
     public function getAmountInt()
     {
         return $this->amountFormat('');
+    }
+
+    public function getModificationValueInt()
+    {
+        return $this->amountFormat('', 'modificationValue');
     }
 }
