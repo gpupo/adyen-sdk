@@ -79,10 +79,10 @@ class OrderTest extends EntityTestCaseAbstract
      */
     public function getterAmount(EntityInterface $object)
     {
-        foreach ([128, 44.5, 12085342.55, 129.01] as $num) {
+        foreach ([128.0, 44.5, 12085342.55, 129.01] as $num) {
             $object->setAmount($num);
             $out = $object->getAmount();
-            $this->assertSame($num, $out);
+            $this->assertSame($num, (float) $out);
         }
     }
 
@@ -96,7 +96,7 @@ class OrderTest extends EntityTestCaseAbstract
         foreach ([128, 129.01, 88.1, 457883.99] as $num) {
             $object->setAmount($num);
             $out = $object->getAmountInt();
-            $this->assertSame($num * 100, $out);
+            $this->assertSame((float) $num * 100, (float) $out);
         }
     }
 
