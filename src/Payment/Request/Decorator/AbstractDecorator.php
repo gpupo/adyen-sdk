@@ -2,14 +2,14 @@
 
 /*
  * This file is part of gpupo/adyen-sdk
- *
- * (c) Gilmar Pupo <g@g1mr.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- *
- * For more information, see
- * <http://www.g1mr.com/adyen-sdk/>.
+ * Created by Gilmar Pupo <g@g1mr.com>
+ * For the information of copyright and license you should read the file
+ * LICENSE which is distributed with this source code.
+ * Para a informação dos direitos autorais e de licença você deve ler o arquivo
+ * LICENSE que é distribuído com este código-fonte.
+ * Para obtener la información de los derechos de autor y la licencia debe leer
+ * el archivo LICENSE que se distribuye con el código fuente.
+ * For more information, see <http://www.g1mr.com/>.
  */
 
 namespace Gpupo\AdyenSdk\Payment\Request\Decorator;
@@ -25,7 +25,7 @@ abstract class AbstractDecorator extends CollectionAbstract
 
     protected function factoryReference()
     {
-        return 'payment-' . $this->name . $this->getOrder()->getId();
+        return 'payment-'.$this->name.$this->getOrder()->getId();
     }
 
     public function setRequest(Request $request)
@@ -35,7 +35,7 @@ abstract class AbstractDecorator extends CollectionAbstract
 
     protected function getRequest()
     {
-        if ( ! $this->request instanceof Request) {
+        if (!$this->request instanceof Request) {
             throw new \InvalidArgumentException('Request ausente!');
         }
 
@@ -60,7 +60,7 @@ abstract class AbstractDecorator extends CollectionAbstract
             'amount'                 => ['currency' => 'BRL', 'value' => $this->getOrder()->getAmountInt()],
             'shopperEmail'           => $this->getOrder()->getShopper()->getEmail(),
             'shopperIP'              => $this->getOrder()->getShopper()->getIp(),
-            'merchantOrderReference' => 'payment-' . $this->getOrder()->getId(),
+            'merchantOrderReference' => 'payment-'.$this->getOrder()->getId(),
         ];
     }
 

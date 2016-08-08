@@ -2,14 +2,14 @@
 
 /*
  * This file is part of gpupo/adyen-sdk
- *
- * (c) Gilmar Pupo <g@g1mr.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- *
- * For more information, see
- * <http://www.g1mr.com/adyen-sdk/>.
+ * Created by Gilmar Pupo <g@g1mr.com>
+ * For the information of copyright and license you should read the file
+ * LICENSE which is distributed with this source code.
+ * Para a informação dos direitos autorais e de licença você deve ler o arquivo
+ * LICENSE que é distribuído com este código-fonte.
+ * Para obtener la información de los derechos de autor y la licencia debe leer
+ * el archivo LICENSE que se distribuye con el código fuente.
+ * For more information, see <http://www.g1mr.com/>.
  */
 
 namespace Gpupo\AdyenSdk\Payment\Request;
@@ -40,10 +40,10 @@ class Manager extends ManagerAbstract implements OptionsInterface
     protected $entity = 'Request';
 
     protected $maps = [
-        'submit'            => ['POST', '/authorise'],
-        'capture'           => ['POST', '/capture'],
-        'refund'            => ['POST', '/refund'],
-        'cancelOrRefund'    => ['POST', '/cancelOrRefund'],
+        'submit'         => ['POST', '/authorise'],
+        'capture'        => ['POST', '/capture'],
+        'refund'         => ['POST', '/refund'],
+        'cancelOrRefund' => ['POST', '/cancelOrRefund'],
     ];
 
     protected function preExecute(Request $request)
@@ -114,15 +114,15 @@ class Manager extends ManagerAbstract implements OptionsInterface
 
     protected function getFullyQualifiedDecoratorName($name)
     {
-        return Factory::PACKAGENAME . 'Payment\Response\Decorator\\' . $name;
+        return Factory::PACKAGENAME.'Payment\Response\Decorator\\'.$name;
     }
 
     protected function resolveDecorator(Request $request)
     {
         $className = $this->getFullyQualifiedDecoratorName($request->getDecoratorName());
 
-        if ( ! class_exists($className)) {
-            throw new \InvalidArgumentException('Response type [' . $request->getType() . '] not supported!');
+        if (!class_exists($className)) {
+            throw new \InvalidArgumentException('Response type ['.$request->getType().'] not supported!');
         }
 
         return $className;

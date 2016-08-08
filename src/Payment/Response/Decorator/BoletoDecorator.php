@@ -2,14 +2,14 @@
 
 /*
  * This file is part of gpupo/adyen-sdk
- *
- * (c) Gilmar Pupo <g@g1mr.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- *
- * For more information, see
- * <http://www.g1mr.com/adyen-sdk/>.
+ * Created by Gilmar Pupo <g@g1mr.com>
+ * For the information of copyright and license you should read the file
+ * LICENSE which is distributed with this source code.
+ * Para a informação dos direitos autorais e de licença você deve ler o arquivo
+ * LICENSE que é distribuído com este código-fonte.
+ * Para obtener la información de los derechos de autor y la licencia debe leer
+ * el archivo LICENSE que se distribuye con el código fuente.
+ * For more information, see <http://www.g1mr.com/>.
  */
 
 namespace Gpupo\AdyenSdk\Payment\Response\Decorator;
@@ -44,7 +44,7 @@ class BoletoDecorator extends AbstractDecorator implements SuccessInterface
     {
         if (array_key_exists('additionalData', $data) && is_array($data['additionalData'])) {
             foreach ($this->getBoletoFields() as $item) {
-                $key = 'boletobancario.' . $item;
+                $key = 'boletobancario.'.$item;
                 if (array_key_exists($key, $data['additionalData'])) {
                     $data[$item] = $data['additionalData'][$key];
                     unset($data['additionalData'][$key]);
