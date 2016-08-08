@@ -36,7 +36,9 @@ class ClientTest extends TestCaseAbstract
      */
     public function testGerenciaUriDeRecurso($client)
     {
-        $this->assertSame('https://pal-test.adyen.com/pal/servlet/Payment/v12/authorise',
-            $client->getResourceUri('/authorise'));
+        $this->assertSame(
+            'https://pal-test.adyen.com/pal/servlet/Payment/v12/authorise',
+            $client->getResourceUri('/authorise')
+        );
     }
 }
