@@ -70,7 +70,7 @@ class Request extends EntityAbstract implements EntityInterface
         return $className;
     }
 
-    public function toJson($route = null)
+    public function toJson($route = null, $options = 0, $depth = 512)
     {
         $decorator = $this->resolveDecorator();
         $instance = new $decorator();
