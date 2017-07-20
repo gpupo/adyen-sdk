@@ -19,9 +19,9 @@ class BoletoDecorator extends AbstractDecorator
     protected function getCustomFields()
     {
         $data = [
-            'shopperStatement'     => 'Não aceitar após o vencimento. Não aceitar o pagamento com cheque',
-            'selectedBrand'        => 'boletobancario_santander',
-            'deliveryDate'         => $this->getOrder()->getDeliveryDate(),
+            'shopperStatement' => 'Não aceitar após o vencimento. Não aceitar o pagamento com cheque',
+            'selectedBrand'    => 'boletobancario_santander',
+            'deliveryDate'     => $this->getOrder()->getDeliveryDate(),
         ];
 
         $socialSecurityNumber = $this->getOrder()->getShopper()->getSocialSecurityNumber();
