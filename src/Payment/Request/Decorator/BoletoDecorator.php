@@ -18,14 +18,23 @@ class BoletoDecorator extends AbstractDecorator
 {
     protected function getCustomFields()
     {
-        return [
-            'shopperName'          => $this->getOrder()->getShopper()->getFullName(),
-            'socialSecurityNumber' => $this->getOrder()->getShopper()->getSocialSecurityNumber(),
-            'billingAddress'       => $this->getOrder()->getBillingAddress()->toArray(),
-            'shopperName'          => $this->getOrder()->getShopper()->getArrayName(),
+        $data = [
             'shopperStatement'     => 'Não aceitar após o vencimento. Não aceitar o pagamento com cheque',
             'selectedBrand'        => 'boletobancario_santander',
             'deliveryDate'         => $this->getOrder()->getDeliveryDate(),
         ];
+
+        $socialSecurityNumber = $this->getOrder()->getShopper()->getSocialSecurityNumber();
+
+        if (!empty(intval($socialSecurityNumber))) {
+            $data = array_merge($data, [
+                'shopperName'          => $this->getOrder()->getShopper()->getFullName(),
+                'socialSecurityNumber' => $socialSecurityNumber,
+                'billingAddress'       => $this->getOrder()->getBillingAddress()->toArray(),
+                'shopperName'          => $this->getOrder()->getShopper()->getArrayName(),
+            ]);
+        }
+
+        return $data;
     }
 }
