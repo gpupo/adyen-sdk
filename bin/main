@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  *
  * For more information, see
- * <http://www.g1mr.com/adyen-sdk/>.
+ * <https://opensource.gpupo.com/adyen-sdk/>.
  */
 
 require __DIR__.'/../vendor/autoload.php';

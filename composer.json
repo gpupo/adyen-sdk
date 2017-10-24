@@ -1,7 +1,7 @@
 {
     "name": "gpupo/adyen-sdk",
     "description": "SDK Não Oficial para integração a partir de aplicações PHP com as APIs da Adyen",
-    "homepage": "http://www.g1mr.com/adyen-sdk/",
+    "homepage": "https://opensource.gpupo.com/adyen-sdk/",
     "authors": [
         {
             "name": "Gilmar Pupo",
